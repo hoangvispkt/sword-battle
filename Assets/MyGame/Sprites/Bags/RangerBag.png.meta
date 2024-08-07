@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RangerBag_0: 1766582332721502825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

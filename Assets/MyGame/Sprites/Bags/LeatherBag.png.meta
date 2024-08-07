@@ -183,7 +183,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LeatherBag_0: -4570096753328562795
+      LeatherBag_1: -3998699203899341199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

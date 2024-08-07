@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DuffleBag_0: -6717198813533004263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

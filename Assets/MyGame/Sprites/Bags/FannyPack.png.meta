@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FannyPack_0: 5238095855452222290
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
