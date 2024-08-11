@@ -7,8 +7,9 @@ public class keoThaDayThung : MonoBehaviour
 
     private void OnMouseDown()
     {
-        isDragging = true;
-        offset = transform.position - GetMouseWorldPos();
+            isDragging = true;
+            offset = transform.position - GetMouseWorldPos();
+        
     }
 
     private void OnMouseUp()
@@ -16,8 +17,11 @@ public class keoThaDayThung : MonoBehaviour
         isDragging = false;
     }
 
+
+
     private void Update()
     {
+        
         if (isDragging)
         {
             Vector3 mousePos = GetMouseWorldPos();

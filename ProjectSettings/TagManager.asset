@@ -6,6 +6,9 @@ TagManager:
   tags:
   - plus
   - point
+  - rope
+  - rope0
+  - weapo
   layers:
   - Default
   - TransparentFX
