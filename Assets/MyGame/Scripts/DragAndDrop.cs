@@ -13,6 +13,8 @@ public class DragAndDrop : MonoBehaviour
 
     private int rotateCount = 0; // Biến đếm số lần xoay
 
+    public Transform scabbardRect;
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -83,6 +85,9 @@ public class DragAndDrop : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, newZRotation);
             }
         }
+
+
+
     }
 
     void FixedUpdate()
@@ -105,4 +110,21 @@ public class DragAndDrop : MonoBehaviour
         mousePoint.z = 10.0f; // Set this to be the distance from the camera to the object
         return mainCamera.ScreenToWorldPoint(mousePoint);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "kiem")
+        {
+            Debug.Log("Nhận được rồi");
+            // Đặt vị trí của đối tượng tại vị trí của scabbardRect
+            collision.transform.position = scabbardRect.transform.position;
+            // Đảm bảo đối tượng đứng yên tại vị trí mới
+
+            rb.velocity = Vector2.zero;       // Ngừng chuyển động
+            rb.angularVelocity = 0f;          // Ngừng xoay
+            Debug.Log("khoa vat ly");
+            rb.bodyType = RigidbodyType2D.Kinematic; // Đặt chế độ Kinematic để không bị ảnh hưởng bởi lực vật lý
+        }
+    }
+
 }

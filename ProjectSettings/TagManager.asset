@@ -9,6 +9,8 @@ TagManager:
   - rope
   - rope0
   - weapo
+  - kiem
+  - sword
   layers:
   - Default
   - TransparentFX
