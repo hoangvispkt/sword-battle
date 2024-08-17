@@ -1,10 +1,12 @@
 using UnityEditor;
 using UnityEngine;
+using System.Collections.Generic;
 
 [CustomEditor(typeof(Attribute))]
 public class MyComponentEditor : Editor
 {
-    private string newOption = "";
+    // List of available options for the dropdown
+    private List<string> availableOptions = new List<string> { "DAMAGE", "HP", "MANA", "CRITICAL", "RESILIENCE" };
 
     public override void OnInspectorGUI()
     {
@@ -14,21 +16,26 @@ public class MyComponentEditor : Editor
         for (int i = 0; i < myComponent.optionValuePairs.Count; i++)
         {
             var pair = myComponent.optionValuePairs[i];
-            pair.option = EditorGUILayout.TextField($"Option {i + 1}", pair.option);
-            pair.value = EditorGUILayout.TextField($"Value {i + 1}", pair.value);
-        }
 
-        // Display a textbox to input new option
-        newOption = EditorGUILayout.TextField("New Option", newOption);
-
-        // Display a button to add the new option
-        if (GUILayout.Button("Add Option"))
-        {
-            if (!string.IsNullOrEmpty(newOption))
+            // Ensure the option is in the availableOptions list
+            if (!availableOptions.Contains(pair.option))
             {
-                myComponent.AddOptionValuePair(newOption);
-                newOption = ""; // Clear the input field
+                availableOptions.Add(pair.option);
             }
+
+            // Create a dropdown for options
+            int selectedIndex = availableOptions.IndexOf(pair.option);
+            if (selectedIndex == -1)
+            {
+                selectedIndex = 0;
+            }
+            selectedIndex = EditorGUILayout.Popup($"Option {i + 1}", selectedIndex, availableOptions.ToArray());
+
+            // Set the selected option back to the pair
+            pair.option = availableOptions[selectedIndex];
+
+            // TextField for the value associated with the option
+            pair.value = EditorGUILayout.TextField($"Value {i + 1}", pair.value);
         }
 
         // Save any changes back to the target object

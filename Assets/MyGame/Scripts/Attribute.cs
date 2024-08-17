@@ -12,9 +12,11 @@ public class Attribute : MonoBehaviour
 {
     public List<OptionValuePair> optionValuePairs = new List<OptionValuePair>
     {
-        new OptionValuePair { option = "Option 1", value = "" },
-        new OptionValuePair { option = "Option 2", value = "" },
-        new OptionValuePair { option = "Option 3", value = "" }
+        new OptionValuePair { option = "DAMAGE", value = "" },
+        new OptionValuePair { option = "HP", value = "" },
+        new OptionValuePair { option = "MANA", value = "" },
+        new OptionValuePair { option = "CRITICAL", value = "" },
+        new OptionValuePair { option = "RESILIENCE", value = "" }
     };
 
     // Phương thức để thêm option và value mới
