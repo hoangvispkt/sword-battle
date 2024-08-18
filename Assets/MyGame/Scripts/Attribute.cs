@@ -2,24 +2,37 @@
 using UnityEngine;
 
 [System.Serializable]
-public class OptionValuePair
+public enum WeaponAttribute
 {
-    public string option;
-    public string value;
+    DAMAGE,
+    HP,
+    MP,
+    ATTACK_SPEED,
+    CRIT,
+    ARMOR,
+    STR,
+    AGI,
+    INT,
+    DEX,
+    LUCK,
+
+}
+
+[System.Serializable]
+public class AttributeOption
+{
+    public WeaponAttribute attribute;
+    public float value;
 }
 
 public class Attribute : MonoBehaviour
 {
-    public List<OptionValuePair> optionValuePairs = new List<OptionValuePair>
-    {
-        new OptionValuePair { option = "DAMAGE", value = "" },
-        new OptionValuePair { option = "HP", value = "" },
-        new OptionValuePair { option = "MANA", value = "" },
-    };
+    [HideInInspector]
+    public List<AttributeOption> attributes = new List<AttributeOption>();
 
-    // Phương thức để thêm option và value mới
-    public void AddOptionValuePair(string option)
+    // This function will be called when "Add Option" button is clicked
+    public void AddOption()
     {
-        optionValuePairs.Add(new OptionValuePair { option = option, value = "" });
+        attributes.Add(new AttributeOption());
     }
 }
