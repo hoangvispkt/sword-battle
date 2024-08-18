@@ -15,8 +15,6 @@ public class Attribute : MonoBehaviour
         new OptionValuePair { option = "DAMAGE", value = "" },
         new OptionValuePair { option = "HP", value = "" },
         new OptionValuePair { option = "MANA", value = "" },
-        new OptionValuePair { option = "CRITICAL", value = "" },
-        new OptionValuePair { option = "RESILIENCE", value = "" }
     };
 
     // Phương thức để thêm option và value mới

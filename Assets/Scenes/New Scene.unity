@@ -4539,6 +4539,10 @@ MonoBehaviour:
     value: 
   - option: MANA
     value: 
+  - option: CRITICAL
+    value: 
+  - option: RESILIENCE
+    value: 
 --- !u!61 &797040644
 BoxCollider2D:
   m_ObjectHideFlags: 0

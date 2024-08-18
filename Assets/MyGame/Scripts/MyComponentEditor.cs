@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class MyComponentEditor : Editor
 {
     // List of available options for the dropdown
-    private List<string> availableOptions = new List<string> { "DAMAGE", "HP", "MANA", "CRITICAL", "RESILIENCE" };
+    private List<string> availableOptions = new List<string> { "DAMAGE", "HP", "MANA" };
 
     public override void OnInspectorGUI()
     {
@@ -16,12 +16,6 @@ public class MyComponentEditor : Editor
         for (int i = 0; i < myComponent.optionValuePairs.Count; i++)
         {
             var pair = myComponent.optionValuePairs[i];
-
-            // Ensure the option is in the availableOptions list
-            if (!availableOptions.Contains(pair.option))
-            {
-                availableOptions.Add(pair.option);
-            }
 
             // Create a dropdown for options
             int selectedIndex = availableOptions.IndexOf(pair.option);
@@ -36,6 +30,20 @@ public class MyComponentEditor : Editor
 
             // TextField for the value associated with the option
             pair.value = EditorGUILayout.TextField($"Value {i + 1}", pair.value);
+        }
+
+        // Display a button to add the next available option to the list
+        if (GUILayout.Button("Add Option"))
+        {
+            // Add the next available option that is not already in the list
+            foreach (string option in availableOptions)
+            {
+                if (!myComponent.optionValuePairs.Exists(p => p.option == option))
+                {
+                    myComponent.AddOptionValuePair(option);
+                    break;
+                }
+            }
         }
 
         // Save any changes back to the target object
