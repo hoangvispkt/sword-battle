@@ -36,6 +36,7 @@ public class MoveWeapon : MonoBehaviour
         }
 
         // Đến đích, có thể thực hiện thêm hành động khác ở đây
+
     }
 
     Vector3 CalculateBezierCurve(Vector3 start, Vector3 end, float height, float t)

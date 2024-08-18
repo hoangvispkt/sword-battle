@@ -1060,6 +1060,53 @@ MonoBehaviour:
   - {fileID: 818803643}
   - {fileID: 1187916437}
   - {fileID: 2060857547}
+--- !u!1 &178320986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 178320988}
+  - component: {fileID: 178320987}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &178320987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178320986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdeeb46ec5d11e24d8f92b6ddb983ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberPrefab: {fileID: 6481233558737406618, guid: de4306b612fab184cbd70cd9e97bd975, type: 3}
+  rectParent: {fileID: 968229071}
+  target: {fileID: 0}
+--- !u!4 &178320988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178320986}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6496835, y: 0.32915753, z: 8.468147}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &186268259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2075,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 133348822}
   pointUp: {fileID: 177326304}
   pointDown: {fileID: 355242821}
-  attackSpeed: 0.2
+  attackSpeed: 0.8
 --- !u!114 &352170689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2045,7 +2092,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 656843927}
   pointUp: {fileID: 953534656}
   pointDown: {fileID: 735391577}
-  attackSpeed: 0.1
+  attackSpeed: 0.7
 --- !u!114 &352170690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2062,7 +2109,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1335705874}
   pointUp: {fileID: 1512965713}
   pointDown: {fileID: 1251155893}
-  attackSpeed: 0.2
+  attackSpeed: 0.6
 --- !u!114 &352170691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,7 +2126,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 797040641}
   pointUp: {fileID: 572379226}
   pointDown: {fileID: 1685136873}
-  attackSpeed: 0.1
+  attackSpeed: 0.5
 --- !u!114 &352170692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,7 +2143,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 966269832}
   pointUp: {fileID: 300523700}
   pointDown: {fileID: 769917422}
-  attackSpeed: 0.1
+  attackSpeed: 1.1
 --- !u!114 &352170693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,7 +2160,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1309104098}
   pointUp: {fileID: 709049167}
   pointDown: {fileID: 935032005}
-  attackSpeed: 0.2
+  attackSpeed: 1
 --- !u!114 &352170694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2130,7 +2177,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1368908733}
   pointUp: {fileID: 1675509800}
   pointDown: {fileID: 298952771}
-  attackSpeed: 0.1
+  attackSpeed: 0.9
 --- !u!1 &355242820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2966,7 @@ Transform:
   m_GameObject: {fileID: 546673343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: 0}
+  m_LocalPosition: {x: -5.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4186,7 +4233,7 @@ Transform:
   m_GameObject: {fileID: 718185791}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 4.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8867,7 +8914,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1507553995}
   pointUp: {fileID: 370182058}
   pointDown: {fileID: 1438474879}
-  attackSpeed: 0.2
+  attackSpeed: 0.8
 --- !u!114 &1461540860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8884,7 +8931,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1580454525}
   pointUp: {fileID: 1956721669}
   pointDown: {fileID: 1438474879}
-  attackSpeed: 0.1
+  attackSpeed: 0.7
 --- !u!114 &1461540861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8901,7 +8948,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 243963470}
   pointUp: {fileID: 1421057529}
   pointDown: {fileID: 78153260}
-  attackSpeed: 0.2
+  attackSpeed: 0.6
 --- !u!114 &1461540862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8918,7 +8965,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 372432785}
   pointUp: {fileID: 812027877}
   pointDown: {fileID: 561699754}
-  attackSpeed: 0.1
+  attackSpeed: 0.5
 --- !u!114 &1461540863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8935,7 +8982,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1334381770}
   pointUp: {fileID: 56918332}
   pointDown: {fileID: 1311898563}
-  attackSpeed: 0.1
+  attackSpeed: 1.1
 --- !u!114 &1461540864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8952,7 +8999,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 757051090}
   pointUp: {fileID: 217991607}
   pointDown: {fileID: 925399158}
-  attackSpeed: 0.2
+  attackSpeed: 1
 --- !u!114 &1461540865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8969,7 +9016,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 115595381}
   pointUp: {fileID: 1565942185}
   pointDown: {fileID: 1454047499}
-  attackSpeed: 0.1
+  attackSpeed: 0.9
 --- !u!1 &1490708551
 GameObject:
   m_ObjectHideFlags: 0
@@ -9862,7 +9909,7 @@ Transform:
   m_GameObject: {fileID: 1656621512}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: 0}
+  m_LocalPosition: {x: -4.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12345,7 +12392,7 @@ Transform:
   m_GameObject: {fileID: 2106802501}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 5.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12600,3 +12647,4 @@ SceneRoots:
   - {fileID: 976090570}
   - {fileID: 968229071}
   - {fileID: 1737515717}
+  - {fileID: 178320988}

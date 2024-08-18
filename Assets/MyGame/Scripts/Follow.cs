@@ -76,6 +76,8 @@ public class Follow : MonoBehaviour
             routeToGo = 0;
         }
 
+        GameManager.Instance.HandleAttack(this.gameObject, routes[routeNum].GetChild(3));
+
         Destroy(this.gameObject);
 
         coroutineAllowed = true;
