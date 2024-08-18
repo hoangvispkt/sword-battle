@@ -4,8 +4,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public DamageNumber numberPrefab;
-    public RectTransform rectParent;
-    public Transform target;
+    public bool isStartGame = false;
+    public GameObject dialogWin;
+    public GameObject dialogLose;
+    public GameObject shop;
+    public GameObject rightCharacter;
+    public GameObject rightCharacterUI;
 
     public static GameManager Instance { get; private set; }
 
@@ -23,7 +27,19 @@ public class GameManager : MonoBehaviour
 
     public void HandleAttack(GameObject weapon, Transform transform)
     {
-        Debug.Log(weapon);
         DamageNumber damageNumber = numberPrefab.Spawn(transform.position, Random.Range(1, 100));
+    }
+
+    public void StartGame()
+    {
+        Instance.isStartGame = true;
+        Instance.shop.SetActive(false);
+        Instance.rightCharacter.SetActive(true);
+        Instance.rightCharacterUI.SetActive(true);
+    }
+
+    public void CloseDialog(GameObject dialog)
+    {
+        dialog.SetActive(false);
     }
 }
