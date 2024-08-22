@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
     public GameObject rightCharacter;
     public GameObject rightCharacterUI;
 
+
+    public int TotalHp = 0;
+    public int TotalDamage = 0;
+    public int TotalMp = 0;
+    public int TotalCrit = 0;
+
     public static GameManager Instance { get; private set; }
 
     private void Awake()
@@ -27,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void HandleAttack(GameObject weapon, Transform transform)
     {
-        DamageNumber damageNumber = numberPrefab.Spawn(transform.position, Random.Range(1, 100));
+        DamageNumber damageNumber = numberPrefab.Spawn(transform.position, Random.Range(1, TotalDamage));
     }
 
     public void StartGame()
@@ -41,5 +47,15 @@ public class GameManager : MonoBehaviour
     public void CloseDialog(GameObject dialog)
     {
         dialog.SetActive(false);
+    }
+
+    public void UpdateTotalAttributes(int hp, int damage, int mp, int crit)
+    {
+        TotalHp += hp;
+        TotalDamage += damage;
+        TotalMp += mp;
+        TotalCrit += crit;
+
+        Debug.Log($"Tổng sau khi cập : HP = {TotalHp}, Damage = {TotalDamage}, MP = {TotalMp}, Crit = {TotalCrit}");
     }
 }

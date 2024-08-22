@@ -1794,6 +1794,8 @@ GameObject:
   - component: {fileID: 237345822}
   - component: {fileID: 237345824}
   - component: {fileID: 237345823}
+  - component: {fileID: 237345825}
+  - component: {fileID: 237345826}
   m_Layer: 0
   m_Name: Bag
   m_TagString: sword
@@ -1850,7 +1852,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.1658184}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1860,7 +1862,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 2.85}
+  m_Size: {x: 4.56, y: 1.0259929}
   m_EdgeRadius: 0
 --- !u!212 &237345824
 SpriteRenderer:
@@ -1917,6 +1919,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &237345825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237345821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0.02552463, b: 0.015686274, a: 1}
+  spriteRenderer: {fileID: 237345824}
+--- !u!114 &237345826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237345821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Damage: 0
+  Mp: 0
+  Crit: 0
 --- !u!1 &238124623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,6 +2616,7 @@ GameObject:
   - component: {fileID: 352170694}
   - component: {fileID: 352170693}
   - component: {fileID: 352170692}
+  - component: {fileID: 352170695}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -2734,6 +2767,22 @@ MonoBehaviour:
   pointUp: {fileID: 1675509800}
   pointDown: {fileID: 298952771}
   attackSpeed: 0.9
+--- !u!114 &352170695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352170686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Damage: 0
+  Mp: 0
+  Crit: 0
 --- !u!1 &355242820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,6 +4730,8 @@ GameObject:
   - component: {fileID: 714222939}
   - component: {fileID: 714222941}
   - component: {fileID: 714222940}
+  - component: {fileID: 714222942}
+  - component: {fileID: 714222943}
   m_Layer: 0
   m_Name: Bag
   m_TagString: sword
@@ -4737,7 +4788,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.04145497}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4747,7 +4798,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 2.85}
+  m_Size: {x: 4.56, y: 1.2747201}
   m_EdgeRadius: 0
 --- !u!212 &714222941
 SpriteRenderer:
@@ -4804,6 +4855,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &714222942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714222938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0.019191265, a: 1}
+  spriteRenderer: {fileID: 714222941}
+--- !u!114 &714222943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714222938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Damage: 0
+  Mp: 0
+  Crit: 0
 --- !u!1 &718185791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,13 +5091,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740941222}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7056943, w: 0.7085164}
   m_LocalPosition: {x: 6.896707, y: 1.3013194, z: 0.0018567394}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 196614901}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.771}
 --- !u!212 &740941224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5085,6 +5166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  dragSpeed: 10
 --- !u!50 &740941226
 Rigidbody2D:
   serializedVersion: 4
@@ -5146,7 +5228,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00013571978, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5156,7 +5238,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.62, y: 4.94}
+  m_Size: {x: 1.577947, y: 4.94}
   m_EdgeRadius: 0
 --- !u!114 &740941228
 MonoBehaviour:
@@ -5170,7 +5252,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98445d8104ae9649ba2f15beedd8fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: []
+  attributes:
+  - attribute: 0
+    value: 100
+  - attribute: 1
+    value: 1
+  - attribute: 4
+    value: 78
 --- !u!1 &757051089
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,6 +5390,8 @@ GameObject:
   - component: {fileID: 766255685}
   - component: {fileID: 766255687}
   - component: {fileID: 766255686}
+  - component: {fileID: 766255688}
+  - component: {fileID: 766255689}
   m_Layer: 0
   m_Name: Bag
   m_TagString: sword
@@ -5368,7 +5458,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 2.85}
+  m_Size: {x: 4.56, y: 1.1918111}
   m_EdgeRadius: 0
 --- !u!212 &766255687
 SpriteRenderer:
@@ -5425,6 +5515,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &766255688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766255684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0.015686274, b: 0.025136784, a: 1}
+  spriteRenderer: {fileID: 766255687}
+--- !u!114 &766255689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766255684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Damage: 0
+  Mp: 0
+  Crit: 0
 --- !u!1 &769458153
 GameObject:
   m_ObjectHideFlags: 0
@@ -5749,19 +5869,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes:
   - attribute: 0
-    value: 0
-  - attribute: 0
-    value: 0
-  - attribute: 0
-    value: 0
-  - attribute: 0
-    value: 0
-  - attribute: 0
-    value: 0
-  - attribute: 0
-    value: 0
-  - attribute: 0
-    value: 0
+    value: 56
+  - attribute: 1
+    value: 1000
+  - attribute: 2
+    value: 400
 --- !u!61 &797040644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6998,7 +7110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &976090570
 Transform:
   m_ObjectHideFlags: 0
@@ -7220,6 +7332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  dragSpeed: 10
 --- !u!50 &1053343985
 Rigidbody2D:
   serializedVersion: 4
@@ -7281,7 +7394,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.9802668, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7291,7 +7404,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.17, y: 6.47}
+  m_Size: {x: 2.2115464, y: 6.47}
   m_EdgeRadius: 0
 --- !u!1 &1066837648
 GameObject:
@@ -7584,6 +7697,8 @@ GameObject:
   - component: {fileID: 1141318698}
   - component: {fileID: 1141318700}
   - component: {fileID: 1141318699}
+  - component: {fileID: 1141318701}
+  - component: {fileID: 1141318702}
   m_Layer: 0
   m_Name: Bag
   m_TagString: sword
@@ -7640,7 +7755,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.12436402}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7650,7 +7765,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 2.85}
+  m_Size: {x: 4.56, y: 1.2747214}
   m_EdgeRadius: 0
 --- !u!212 &1141318700
 SpriteRenderer:
@@ -7707,6 +7822,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1141318701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141318697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0.025427504, b: 0.015686274, a: 1}
+  spriteRenderer: {fileID: 1141318700}
+--- !u!114 &1141318702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141318697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Damage: 0
+  Mp: 0
+  Crit: 0
 --- !u!1 &1152605636
 GameObject:
   m_ObjectHideFlags: 0
@@ -7718,6 +7863,8 @@ GameObject:
   - component: {fileID: 1152605637}
   - component: {fileID: 1152605639}
   - component: {fileID: 1152605638}
+  - component: {fileID: 1152605640}
+  - component: {fileID: 1152605641}
   m_Layer: 0
   m_Name: Bag
   m_TagString: sword
@@ -7774,7 +7921,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.082909495}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7784,7 +7931,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 2.85}
+  m_Size: {x: 4.56, y: 1.0259924}
   m_EdgeRadius: 0
 --- !u!212 &1152605639
 SpriteRenderer:
@@ -7841,6 +7988,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1152605640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152605636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0.044305433, b: 0.015686274, a: 1}
+  spriteRenderer: {fileID: 1152605639}
+--- !u!114 &1152605641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152605636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Damage: 0
+  Mp: 0
+  Crit: 0
 --- !u!1 &1163569233
 GameObject:
   m_ObjectHideFlags: 0
@@ -8023,13 +8200,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217233143}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.715671, w: 0.6984376}
   m_LocalPosition: {x: 6.54, y: 1.95, z: 0.42742276}
   m_LocalScale: {x: 1.3268939, y: 1.1867156, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 976090570}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 91.396}
 --- !u!50 &1217233147
 Rigidbody2D:
   serializedVersion: 4
@@ -8091,7 +8268,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.008064531, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8101,7 +8278,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.63, y: 0.99}
+  m_Size: {x: 0.27627975, y: 0.99}
   m_EdgeRadius: 0
 --- !u!114 &1217233149
 MonoBehaviour:
@@ -8116,6 +8293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  dragSpeed: 10
 --- !u!1 &1251155892
 GameObject:
   m_ObjectHideFlags: 0
@@ -8762,7 +8940,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7810130316266088555, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}
       propertyPath: m_text
-      value: 5368/10000
+      value: 10000/10000
       objectReference: {fileID: 0}
     - target: {fileID: 7810130316266088555, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}
       propertyPath: m_fontSize
@@ -9972,7 +10150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1461540858
 Transform:
   m_ObjectHideFlags: 0
@@ -11616,6 +11794,9 @@ GameObject:
   - component: {fileID: 1698334846}
   - component: {fileID: 1698334847}
   - component: {fileID: 1698334848}
+  - component: {fileID: 1698334849}
+  - component: {fileID: 1698334850}
+  - component: {fileID: 1698334851}
   m_Layer: 0
   m_Name: Bag
   m_TagString: sword
@@ -11727,7 +11908,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.041454434}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11737,8 +11918,60 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 2.85}
+  m_Size: {x: 4.56, y: 1.2747204}
   m_EdgeRadius: 0
+--- !u!95 &1698334849
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698334845}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 63d0c2ca902da4c2cafc9f7b3df0b68d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1698334850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698334845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0.015686274, b: 0.053452175, a: 1}
+  spriteRenderer: {fileID: 1698334847}
+--- !u!114 &1698334851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698334845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Damage: 0
+  Mp: 0
+  Crit: 0
 --- !u!1 &1725996480
 GameObject:
   m_ObjectHideFlags: 0
@@ -11750,6 +11983,8 @@ GameObject:
   - component: {fileID: 1725996481}
   - component: {fileID: 1725996483}
   - component: {fileID: 1725996482}
+  - component: {fileID: 1725996484}
+  - component: {fileID: 1725996485}
   m_Layer: 0
   m_Name: Bag
   m_TagString: sword
@@ -11806,7 +12041,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.082909405}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11816,7 +12051,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 2.85}
+  m_Size: {x: 4.56, y: 1.1918119}
   m_EdgeRadius: 0
 --- !u!212 &1725996483
 SpriteRenderer:
@@ -11873,6 +12108,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1725996484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725996480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 1, g: 0, b: 0, a: 1}
+  spriteRenderer: {fileID: 1725996483}
+--- !u!114 &1725996485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725996480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 0
+  Damage: 0
+  Mp: 0
+  Crit: 0
 --- !u!1 &1733234623
 GameObject:
   m_ObjectHideFlags: 0
@@ -12322,13 +12587,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771974284}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.71216226, w: 0.70201486}
   m_LocalPosition: {x: 6.796707, y: 3.4213192, z: 0.0018567394}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 196614901}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.822}
 --- !u!212 &1771974286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12445,7 +12710,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.6370942, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12455,7 +12720,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.61, y: 4.83}
+  m_Size: {x: 1.3358117, y: 4.83}
   m_EdgeRadius: 0
 --- !u!114 &1771974290
 MonoBehaviour:
@@ -12470,6 +12735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  dragSpeed: 10
 --- !u!114 &1771974291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12482,7 +12748,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98445d8104ae9649ba2f15beedd8fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: []
+  attributes:
+  - attribute: 0
+    value: 100
+  - attribute: 1
+    value: 999
+  - attribute: 2
+    value: 100
 --- !u!1 &1777486339
 GameObject:
   m_ObjectHideFlags: 0
@@ -14443,7 +14715,7 @@ GameObject:
   - component: {fileID: 2116920587}
   m_Layer: 0
   m_Name: BrassKnuckles_0
-  m_TagString: Untagged
+  m_TagString: weapo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14579,7 +14851,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.00000011920929}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14589,7 +14861,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.66, y: 1.32}
+  m_Size: {x: 1.66, y: 0.9117491}
   m_EdgeRadius: 0
 --- !u!114 &2116920587
 MonoBehaviour:
@@ -14604,6 +14876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  dragSpeed: 10
 --- !u!1 &2129487618
 GameObject:
   m_ObjectHideFlags: 0

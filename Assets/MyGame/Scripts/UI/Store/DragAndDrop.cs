@@ -3,15 +3,18 @@ using UnityEngine;
 public class DragAndDrop : MonoBehaviour
 {
     private bool isDragging = false;
-    private bool shouldCheckCollision = false; // Cờ để kiểm tra va chạm
+    private bool shouldCheckCollision = false;
+    private bool isPlaced = false; // New flag to indicate that the object has been placed
     private Vector3 offset;
+    private Vector3 targetPosition;
     public Rigidbody2D rb;
+    public float dragSpeed = 10f; // Tốc độ kéo để điều chỉnh
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // Ensure the object has a Rigidbody2D
+        // Đảm bảo rằng object có Rigidbody2D
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody2D>();
@@ -20,23 +23,56 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // Prevent further dragging if the object is already placed
+        if (isPlaced) return;
+
         isDragging = true;
         offset = transform.position - GetMouseWorldPos();
-        shouldCheckCollision = false; // Không kiểm tra va chạm khi đang kéo
+        shouldCheckCollision = false;
+
+        // Set Rigidbody2D to Kinematic mode while dragging
+        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     private void OnMouseUp()
     {
+        // Prevent further dragging if the object is already placed
+        if (isPlaced) return;
+
         isDragging = false;
-        shouldCheckCollision = true; // Cho phép kiểm tra va chạm khi nhả chuột
+
+        // Reset Rigidbody2D to Dynamic mode after dragging
+        rb.bodyType = RigidbodyType2D.Dynamic;
+
+        // Ensure that the object doesn't suddenly "fall" too fast
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        // Set the object to the last detected target position
+        if (shouldCheckCollision)
+        {
+            transform.position = targetPosition;
+
+            // Mark the object as placed and disable further dragging
+            isPlaced = true;
+
+            // Keep the Rigidbody in Kinematic mode to prevent further movement
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
     }
 
     private void Update()
     {
+        // Prevent further dragging if the object is already placed
+        if (isPlaced) return;
+
         if (isDragging)
         {
             Vector3 mousePos = GetMouseWorldPos();
-            transform.position = new Vector3(mousePos.x + offset.x, mousePos.y + offset.y, transform.position.z);
+            Vector3 targetPos = new Vector3(mousePos.x + offset.x, mousePos.y + offset.y, transform.position.z);
+
+            // Smooth movement to avoid sudden jumps
+            rb.MovePosition(Vector3.Lerp(transform.position, targetPos, dragSpeed * Time.deltaTime));
         }
     }
 
@@ -49,23 +85,13 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Vector3 mousePos = GetMouseWorldPos();
-        // Chỉ kiểm tra va chạm nếu cờ shouldCheckCollision là true
-        if (shouldCheckCollision && collision.tag == "sword")
+        if (collision.CompareTag("sword"))
         {
-            Debug.Log("Nhận được rồi");
-            // Đặt vị trí của đối tượng tại vị trí của scabbardRect
-            //collision.transform.position = scabbardRect.position;
-            transform.position = new Vector3(mousePos.x + offset.x, mousePos.y + offset.y, transform.position.z);
-            // Đảm bảo đối tượng đứng yên tại vị trí mới
-            rb.velocity = Vector2.zero;       // Ngừng chuyển động
-            rb.angularVelocity = 0f;          // Ngừng xoay
-            Debug.Log("Khóa vật lý");
-            rb.bodyType = RigidbodyType2D.Kinematic; // Đặt chế độ Kinematic để không bị ảnh hưởng bởi lực vật lý
+            // Store the position of the sword
+            targetPosition = collision.transform.position;
 
-            // Reset cờ sau khi va chạm đã được xử lý
-            shouldCheckCollision = false;
+            // Set the flag to true, so the position will be updated when the mouse is released
+            shouldCheckCollision = true;
         }
     }
-
 }

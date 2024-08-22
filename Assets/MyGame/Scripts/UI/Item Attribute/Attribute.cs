@@ -15,7 +15,6 @@ public enum WeaponAttribute
     INT,
     DEX,
     LUCK,
-
 }
 
 [System.Serializable]
@@ -34,5 +33,17 @@ public class Attribute : MonoBehaviour
     public void AddOption()
     {
         attributes.Add(new AttributeOption());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("sword"))
+        {
+            PlusIndex playerIndex = collision.GetComponent<PlusIndex>();
+            if (playerIndex != null)
+            {
+                playerIndex.UpdateAttributes(this);
+            }
+        }
     }
 }
