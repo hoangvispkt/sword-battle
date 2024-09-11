@@ -1,5 +1,8 @@
 using DamageNumbersPro;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,11 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject rightCharacter;
     public GameObject rightCharacterUI;
 
-
-    public int TotalHp = 0;
-    public int TotalDamage = 0;
-    public int TotalMp = 0;
-    public int TotalCrit = 0;
+    public Character leftChar;
+    public Character rightChar;
 
     public static GameManager Instance { get; private set; }
 
@@ -31,9 +31,38 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void HandleAttack(GameObject weapon, Transform transform)
+    public void HandleAttack(GameObject weapon, Transform transform, bool isLeftChar)
     {
-        DamageNumber damageNumber = numberPrefab.Spawn(transform.position, Random.Range(1, TotalDamage));
+        List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(weapon);
+        float damage = ItemManager.Instance.GetValue(attributes, WeaponAttribute.DAMAGE);
+        DamageNumber damageNumber = numberPrefab.Spawn(transform.position, damage);
+
+        this.UpdateCharacterStats(isLeftChar, damage);
+    }
+
+    private void UpdateCharacterStats(bool isLeftChar, float damage)
+    {
+        if (!Instance.isStartGame) return;
+        if (isLeftChar)
+        {
+            leftChar.hp = Math.Max(leftChar.hp - (int)damage, 0);
+            leftChar.UpdateHp();
+            if (leftChar.hp <= 0)
+            {
+                Instance.isStartGame = false;
+                dialogLose.SetActive(true);
+            }
+        }
+        else
+        {
+            rightChar.hp = Math.Max(rightChar.hp - (int)damage, 0);
+            rightChar.UpdateHp();
+            if (rightChar.hp <= 0)
+            {
+                Instance.isStartGame = false;
+                dialogWin.SetActive(true);
+            }
+        }
     }
 
     public void StartGame()
@@ -47,15 +76,5 @@ public class GameManager : MonoBehaviour
     public void CloseDialog(GameObject dialog)
     {
         dialog.SetActive(false);
-    }
-
-    public void UpdateTotalAttributes(int hp, int damage, int mp, int crit)
-    {
-        TotalHp += hp;
-        TotalDamage += damage;
-        TotalMp += mp;
-        TotalCrit += crit;
-
-        Debug.Log($"Tổng sau khi cập : HP = {TotalHp}, Damage = {TotalDamage}, MP = {TotalMp}, Crit = {TotalCrit}");
     }
 }

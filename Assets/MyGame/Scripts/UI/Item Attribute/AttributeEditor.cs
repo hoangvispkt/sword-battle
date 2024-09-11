@@ -1,12 +1,12 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(Attribute))]
+[CustomEditor(typeof(AttributeUI))]
 public class AttributeEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        Attribute attributeScript = (Attribute)target;
+        AttributeUI attributeScript = (AttributeUI)target;
 
         DrawDefaultInspector();
 

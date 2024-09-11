@@ -1,8 +1,6 @@
-﻿using NUnit.Framework;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Follow : MonoBehaviour
 {
@@ -20,6 +18,8 @@ public class Follow : MonoBehaviour
     private bool coroutineAllowed;
 
     private bool isStart = false;
+
+    private bool isLeftChar = false;
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +76,7 @@ public class Follow : MonoBehaviour
             routeToGo = 0;
         }
 
-        GameManager.Instance.HandleAttack(this.gameObject, routes[routeNum].GetChild(3));
+        GameManager.Instance.HandleAttack(this.gameObject, routes[routeNum].GetChild(3), isLeftChar);
 
         Destroy(this.gameObject);
 
@@ -98,6 +98,12 @@ public class Follow : MonoBehaviour
     public Follow start()
     {
         this.isStart = true;
+        return this;
+    }
+
+    public Follow isLefChar(bool isLeftChar)
+    {
+        this.isLeftChar = isLeftChar;
         return this;
     }
 }
