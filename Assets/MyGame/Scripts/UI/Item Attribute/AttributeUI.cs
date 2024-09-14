@@ -9,13 +9,13 @@ public enum WeaponAttribute
     MP,
     ATTACK_SPEED,
     CRIT,
+    CRIT_DAMAGE,
     ARMOR,
     STR,
     AGI,
     INT,
     DEX,
     LUCK,
-
 }
 
 [System.Serializable]

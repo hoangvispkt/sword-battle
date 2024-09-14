@@ -45,22 +45,22 @@ public class GameManager : MonoBehaviour
         if (!Instance.isStartGame) return;
         if (isLeftChar)
         {
-            leftChar.hp = Math.Max(leftChar.hp - (int)damage, 0);
-            leftChar.UpdateHp();
-            if (leftChar.hp <= 0)
-            {
-                Instance.isStartGame = false;
-                dialogLose.SetActive(true);
-            }
-        }
-        else
-        {
             rightChar.hp = Math.Max(rightChar.hp - (int)damage, 0);
             rightChar.UpdateHp();
             if (rightChar.hp <= 0)
             {
                 Instance.isStartGame = false;
                 dialogWin.SetActive(true);
+            }
+        }
+        else
+        {
+            leftChar.hp = Math.Max(leftChar.hp - (int)damage, 0);
+            leftChar.UpdateHp();
+            if (leftChar.hp <= 0)
+            {
+                Instance.isStartGame = false;
+                dialogLose.SetActive(true);
             }
         }
     }
