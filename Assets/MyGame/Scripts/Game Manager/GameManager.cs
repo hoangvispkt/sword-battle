@@ -2,7 +2,6 @@ using DamageNumbersPro;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +12,9 @@ public class GameManager : MonoBehaviour
     public GameObject shop;
     public GameObject rightCharacter;
     public GameObject rightCharacterUI;
+    public List<GameObject> itemsPrefab;
+    public List<GameObject> shopItemPositions;
+    public Camera worldCamera;
 
     public Character leftChar;
     public Character rightChar;
@@ -29,6 +31,11 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        Roll();
     }
 
     public void HandleAttack(GameObject weapon, Transform transform, bool isLeftChar)
@@ -76,5 +83,23 @@ public class GameManager : MonoBehaviour
     public void CloseDialog(GameObject dialog)
     {
         dialog.SetActive(false);
+    }
+
+    public void Roll()
+    {
+        for (int i = 0; i < shopItemPositions.Count; i++)
+        {
+            ClearChildObjects(shopItemPositions[i]);
+            int index = UnityEngine.Random.Range(0, itemsPrefab.Count);
+            GameObject newItem = Instantiate(itemsPrefab[index], shopItemPositions[i].transform);
+        }
+    }
+
+    public void ClearChildObjects(GameObject parentObject)
+    {
+        foreach (Transform child in parentObject.transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

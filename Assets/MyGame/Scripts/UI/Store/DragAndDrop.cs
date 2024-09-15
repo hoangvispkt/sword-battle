@@ -7,8 +7,8 @@ public class DragAndDrop : MonoBehaviour
     private bool isPlaced = false; // New flag to indicate that the object has been placed
     private Vector3 offset;
     private Vector3 targetPosition;
-    public Rigidbody2D rb;
-    public float dragSpeed = 10f; // Tốc độ kéo để điều chỉnh
+    private Rigidbody2D rb;
+    private float dragSpeed = 10f; // Tốc độ kéo để điều chỉnh
 
     void Start()
     {
