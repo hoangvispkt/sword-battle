@@ -9,7 +9,6 @@ public enum WeaponAttribute
     MP,
     ATTACK_SPEED,
     CRIT,
-    CRIT_DAMAGE,
     ARMOR,
     STR,
     AGI,
@@ -23,16 +22,22 @@ public class AttributeOption
 {
     public WeaponAttribute attribute;
     public float value;
+    public AttributeOption(WeaponAttribute attribute, float value)
+    {
+        this.attribute = attribute;
+        this.value = value;
+    }
 }
 
-public class AttributeUI : MonoBehaviour
+[CreateAssetMenu(fileName = "NewWeaponAttributes", menuName = "Weapon/Attributes")]
+public class AttributeUI : ScriptableObject
 {
     [HideInInspector]
     public List<AttributeOption> attributes = new List<AttributeOption>();
 
-    // This function will be called when "Add Option" button is clicked
     public void AddOption()
     {
-        attributes.Add(new AttributeOption());
+        // Add a default attribute with a default value
+        attributes.Add(new AttributeOption(WeaponAttribute.DAMAGE, 0f));
     }
 }

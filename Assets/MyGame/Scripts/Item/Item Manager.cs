@@ -18,16 +18,10 @@ public class ItemManager: MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public List<AttributeOption> GetAttributes(GameObject item)
+    public List<AttributeOption> GetAttributes(GameObject weapon)
     {
-        AttributeUI attributeUI = item.GetComponent<AttributeUI>();
-
-        if (attributeUI != null)
-        {
-            return attributeUI.attributes;
-        }
-
-        return new List<AttributeOption>();
+        Item item = weapon.GetComponent<Item>();
+        return item?.attributeUI?.attributes ?? new List<AttributeOption>();
     }
 
     public float GetValue(List<AttributeOption> attributes, WeaponAttribute attribute)

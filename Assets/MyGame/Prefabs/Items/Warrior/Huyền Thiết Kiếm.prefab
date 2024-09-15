@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6334651671374343071}
   - component: {fileID: 7972149201251728582}
-  - component: {fileID: -8540957479769563332}
+  - component: {fileID: 3970962921036204000}
   m_Layer: 0
   m_Name: "Huy\u1EC1n Thi\u1EBFt Ki\u1EBFm"
   m_TagString: Untagged
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8540957479769563332
+--- !u!114 &3970962921036204000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3235652923340777033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98445d8104ae9649ba2f15beedd8fdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 218b473840dcdcd45a9fa2671fc59db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: []
+  attributeUI: {fileID: 11400000, guid: f7867591ed0d0fc478fe843c25648438, type: 2}
