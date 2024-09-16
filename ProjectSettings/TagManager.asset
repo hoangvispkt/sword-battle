@@ -11,6 +11,7 @@ TagManager:
   - weapo
   - kiem
   - sword
+  - bag
   layers:
   - Default
   - TransparentFX

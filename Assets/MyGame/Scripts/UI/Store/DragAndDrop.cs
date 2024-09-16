@@ -1,78 +1,85 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DragAndDrop : MonoBehaviour
 {
-    private bool isDragging = false;
-    private bool shouldCheckCollision = false;
-    private bool isPlaced = false; // New flag to indicate that the object has been placed
+    public bool isEquip = false;
+    public bool isBuy = false;
+    public bool isEnter = false;
     private Vector3 offset;
     private Vector3 targetPosition;
     private Rigidbody2D rb;
-    private float dragSpeed = 10f; // Tốc độ kéo để điều chỉnh
+    private float dragSpeed = 20f;
+    private Vector3 currentPosition;
+
+    private List<SpriteRenderer> enteredBags = new List<SpriteRenderer>();  // Danh sách các bag đã lướt qua
+
+    public Status status;
+
+    public enum Status
+    {
+        FREE, DRAGGING, RETURNING
+    }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // Đảm bảo rằng object có Rigidbody2D
         if (rb == null)
         {
-            rb = gameObject.AddComponent<Rigidbody2D>();
+            Debug.LogError("Rigidbody2D không tồn tại trên GameObject. Hãy thêm nó qua Unity Editor.");
         }
+
+        currentPosition = transform.position;
     }
 
     private void OnMouseDown()
     {
-        // Prevent further dragging if the object is already placed
-        if (isPlaced) return;
-
-        isDragging = true;
+        status = Status.DRAGGING;
+        isEquip = false;
         offset = transform.position - GetMouseWorldPos();
-        shouldCheckCollision = false;
-
-        // Set Rigidbody2D to Kinematic mode while dragging
-        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     private void OnMouseUp()
     {
-        // Prevent further dragging if the object is already placed
-        if (isPlaced) return;
-
-        isDragging = false;
-
-        // Reset Rigidbody2D to Dynamic mode after dragging
-        rb.bodyType = RigidbodyType2D.Dynamic;
-
-        // Ensure that the object doesn't suddenly "fall" too fast
-        rb.velocity = Vector2.zero;
-        rb.angularVelocity = 0f;
-
-        // Set the object to the last detected target position
-        if (shouldCheckCollision)
+        if (isEnter && !isEquip)
         {
-            transform.position = targetPosition;
+            // Đảm bảo đối tượng dừng tại vị trí của "bag"
+            rb.MovePosition(targetPosition);
+            status = Status.FREE;
+            isEquip = true;
+            isBuy = true;
 
-            // Mark the object as placed and disable further dragging
-            isPlaced = true;
+            // Đổi màu của tất cả các bag về bình thường
+            ResetAllBagColors();
+        }
+        else
+        {
+            status = Status.RETURNING;
+            isEquip = false;
 
-            // Keep the Rigidbody in Kinematic mode to prevent further movement
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            // Trả màu cho các bag khi không được gắn vào
+            ResetAllBagColors();
         }
     }
 
     private void Update()
     {
-        // Prevent further dragging if the object is already placed
-        if (isPlaced) return;
-
-        if (isDragging)
+        if (status == Status.DRAGGING)
         {
             Vector3 mousePos = GetMouseWorldPos();
             Vector3 targetPos = new Vector3(mousePos.x + offset.x, mousePos.y + offset.y, transform.position.z);
-
-            // Smooth movement to avoid sudden jumps
             rb.MovePosition(Vector3.Lerp(transform.position, targetPos, dragSpeed * Time.deltaTime));
+        }
+        else if (status == Status.RETURNING)
+        {
+            if (isBuy) currentPosition = targetPosition;
+            rb.MovePosition(Vector3.Lerp(transform.position, currentPosition, dragSpeed * Time.deltaTime));
+
+            if (Vector3.Distance(transform.position, currentPosition) < 0.01f)
+            {
+                status = Status.FREE;
+            }
         }
     }
 
@@ -85,13 +92,59 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("sword"))
+        if (collision.CompareTag("bag"))
         {
-            // Store the position of the sword
-            targetPosition = collision.transform.position;
+            SpriteRenderer bagRenderer = collision.GetComponent<SpriteRenderer>();
 
-            // Set the flag to true, so the position will be updated when the mouse is released
-            shouldCheckCollision = true;
+            if (bagRenderer != null)
+            {
+                bagRenderer.color = Color.cyan;
+
+                if (!enteredBags.Contains(bagRenderer))
+                {
+                    enteredBags.Add(bagRenderer);  // Thêm bag vào danh sách khi lướt qua
+                }
+            }
+
+            targetPosition = collision.transform.position;
+            isEnter = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("bag") && !isEquip)
+        {
+            SpriteRenderer bagRenderer = collision.GetComponent<SpriteRenderer>();
+
+            if (bagRenderer != null)
+            {
+                bagRenderer.color = Color.white;  // Reset màu khi thoát khỏi bag
+                enteredBags.Remove(bagRenderer);  // Loại bỏ bag khỏi danh sách
+            }
+
+            isEnter = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("bag"))
+        {
+            isEnter = true;
+        }
+    }
+
+    private void ResetAllBagColors()
+    {
+        foreach (SpriteRenderer bagRenderer in enteredBags)
+        {
+            if (bagRenderer != null)
+            {
+                bagRenderer.color = Color.white;
+            }
+        }
+
+        enteredBags.Clear();  // Xóa danh sách các bag đã lướt qua
     }
 }
