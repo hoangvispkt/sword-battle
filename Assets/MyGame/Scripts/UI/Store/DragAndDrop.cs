@@ -281,6 +281,8 @@ public class DragAndDrop : MonoBehaviour
 
                 oldIndexEnterBag = indexEnterBag;
                 oldBagPosition = bagPosition;
+
+                UpdateShadow();
                 return;
             }
 
@@ -291,6 +293,8 @@ public class DragAndDrop : MonoBehaviour
         {
             status = Status.FREE;
             StartCoroutine(Move(this.gameObject, shopPosition));
+
+            UpdateShadow();
             return;
         }
 
@@ -319,6 +323,8 @@ public class DragAndDrop : MonoBehaviour
 
             oldIndexEnterBag = indexEnterBag;
             oldBagPosition = bagPosition;
+
+            UpdateShadow();
             return;
         }
 
@@ -330,6 +336,8 @@ public class DragAndDrop : MonoBehaviour
             GameManager.Instance.bagAssignments[oldIndexEnterBag - 1] = null;
             oldIndexEnterBag = -1;
             oldBagPosition = GameManager.Instance.storagePosition.position;
+
+            UpdateShadow();
             return;
         }
 
@@ -358,6 +366,8 @@ public class DragAndDrop : MonoBehaviour
             isBuy = true;
             oldIndexEnterBag = indexEnterBag;
             oldBagPosition = bagPosition;
+
+            UpdateShadow();
             return;
         }
 
@@ -367,6 +377,8 @@ public class DragAndDrop : MonoBehaviour
             StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position));
             oldIndexEnterBag = -1;
             oldBagPosition = GameManager.Instance.storagePosition.position;
+
+            UpdateShadow();
             return;
         }
     }
@@ -404,6 +416,9 @@ public class DragAndDrop : MonoBehaviour
         {
             indexEnterBag = Int32.Parse(collision.tag.Split(new[] { "bag" }, StringSplitOptions.None)[1]);
             bagPosition = collision.transform.position;
+
+            SpriteRenderer shadow = collision.GetComponent<SpriteRenderer>();
+            shadow.color = new Color(1, 1, 1, 0.5f);
         }
     }
 
@@ -413,6 +428,24 @@ public class DragAndDrop : MonoBehaviour
         {
             int index = Int32.Parse(collision.tag.Split(new[] { "bag" }, StringSplitOptions.None)[1]);
             indexEnterBag = -1;
+
+            SpriteRenderer shadow = collision.GetComponent<SpriteRenderer>();
+            shadow.color = new Color(0, 0, 0, 0.5f);
+        }
+    }
+
+    private void UpdateShadow()
+    {
+        for (int i = 0; i < GameManager.Instance.bagAssignments.Length; i++)
+        {
+            if (GameManager.Instance.bagAssignments[i] == null)
+            {
+                GameManager.Instance.bags[i].SetActive(true);
+            }
+            else
+            {
+                GameManager.Instance.bags[i].SetActive(false);
+            }
         }
     }
 }

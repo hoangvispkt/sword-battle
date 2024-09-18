@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Camera worldCamera;
     public Transform storagePosition;  // Vị trí mà weapon sẽ rơi vào khi bị thay thế
     public GameObject[] bagAssignments = new GameObject[7];  // Mảng lưu trữ 7 bag
+    public GameObject[] bags = new GameObject[7];
 
 
     public Character leftChar;

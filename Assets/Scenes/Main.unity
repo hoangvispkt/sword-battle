@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 237345825}
   - component: {fileID: 237345826}
   m_Layer: 0
-  m_Name: Bag
+  m_Name: Bag 7
   m_TagString: bag7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2122,7 +2122,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2625009218440367740, guid: 7fca031f9a948f443a7332780919a784, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2144,7 +2144,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5366,7 +5366,7 @@ GameObject:
   - component: {fileID: 714222941}
   - component: {fileID: 714222940}
   m_Layer: 0
-  m_Name: Bag
+  m_Name: Bag 2
   m_TagString: bag2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5456,7 +5456,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2625009218440367740, guid: 7fca031f9a948f443a7332780919a784, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5478,7 +5478,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6030,7 +6030,7 @@ GameObject:
   - component: {fileID: 766255688}
   - component: {fileID: 766255689}
   m_Layer: 0
-  m_Name: Bag
+  m_Name: Bag 6
   m_TagString: bag6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6120,7 +6120,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2625009218440367740, guid: 7fca031f9a948f443a7332780919a784, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6142,7 +6142,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8884,7 +8884,7 @@ GameObject:
   - component: {fileID: 1141318701}
   - component: {fileID: 1141318702}
   m_Layer: 0
-  m_Name: Bag
+  m_Name: Bag 4
   m_TagString: bag4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8974,7 +8974,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2625009218440367740, guid: 7fca031f9a948f443a7332780919a784, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8996,7 +8996,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9044,7 +9044,7 @@ GameObject:
   - component: {fileID: 1152605640}
   - component: {fileID: 1152605641}
   m_Layer: 0
-  m_Name: Bag
+  m_Name: Bag 5
   m_TagString: bag5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9134,7 +9134,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2625009218440367740, guid: 7fca031f9a948f443a7332780919a784, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9156,7 +9156,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14092,7 +14092,7 @@ GameObject:
   - component: {fileID: 1698334847}
   - component: {fileID: 1698334848}
   m_Layer: 0
-  m_Name: Bag
+  m_Name: Bag 1
   m_TagString: bag1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14136,7 +14136,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2625009218440367740, guid: 7fca031f9a948f443a7332780919a784, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14158,7 +14158,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14228,7 +14228,7 @@ GameObject:
   - component: {fileID: 1725996484}
   - component: {fileID: 1725996485}
   m_Layer: 0
-  m_Name: Bag
+  m_Name: Bag 3
   m_TagString: bag3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14318,7 +14318,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2625009218440367740, guid: 7fca031f9a948f443a7332780919a784, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14340,7 +14340,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16936,6 +16936,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: bags
+      value: 
+      objectReference: {fileID: 1698334845}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: shop
       value: 
       objectReference: {fileID: 976090569}
@@ -16968,6 +16972,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1461540857}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: bags.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: storagePosition
       value: 
       objectReference: {fileID: 1956615390}
@@ -16975,6 +16983,34 @@ PrefabInstance:
       propertyPath: rightCharacterUI
       value: 
       objectReference: {fileID: 1624741504}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bags.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1698334845}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bags.Array.data[1]'
+      value: 
+      objectReference: {fileID: 714222938}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bags.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1725996480}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bags.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1141318697}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bags.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1152605636}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bags.Array.data[5]'
+      value: 
+      objectReference: {fileID: 766255684}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bags.Array.data[6]'
+      value: 
+      objectReference: {fileID: 237345821}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: itemsPrefab.Array.size
       value: 3
@@ -16995,6 +17031,34 @@ PrefabInstance:
       propertyPath: 'itemsPrefab.Array.data[3]'
       value: 
       objectReference: {fileID: 340117852019332781, guid: 157ab3c35e5d2e64dbc1067134926fd4, type: 3}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bagAssignments.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bagAssignments.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bagAssignments.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bagAssignments.Array.data[3]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bagAssignments.Array.data[4]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bagAssignments.Array.data[5]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'bagAssignments.Array.data[6]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: shopItemPositions.Array.size
       value: 8
