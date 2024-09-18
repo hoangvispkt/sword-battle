@@ -323,10 +323,13 @@ public class DragAndDrop : MonoBehaviour
         }
 
         // check return to bag
-        if (indexEnterBag == -1 && isBuy)
+        if (indexEnterBag == -1 && isBuy && oldIndexEnterBag != -1)
         {
             status = Status.FREE;
-            rb.MovePosition(oldBagPosition);
+            StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position));
+            GameManager.Instance.bagAssignments[oldIndexEnterBag - 1] = null;
+            oldIndexEnterBag = -1;
+            oldBagPosition = GameManager.Instance.storagePosition.position;
             return;
         }
 
@@ -355,6 +358,15 @@ public class DragAndDrop : MonoBehaviour
             isBuy = true;
             oldIndexEnterBag = indexEnterBag;
             oldBagPosition = bagPosition;
+            return;
+        }
+
+        if (indexEnterBag == -1 && isBuy && oldIndexEnterBag == -1)
+        {
+            status = Status.FREE;
+            StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position));
+            oldIndexEnterBag = -1;
+            oldBagPosition = GameManager.Instance.storagePosition.position;
             return;
         }
     }
