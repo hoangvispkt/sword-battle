@@ -257,6 +257,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
+        rb.bodyType = RigidbodyType2D.Kinematic;
         status = Status.DRAGGING;
     }
 
@@ -281,8 +282,6 @@ public class DragAndDrop : MonoBehaviour
 
                 oldIndexEnterBag = indexEnterBag;
                 oldBagPosition = bagPosition;
-
-                UpdateShadow();
                 return;
             }
 
@@ -293,8 +292,6 @@ public class DragAndDrop : MonoBehaviour
         {
             status = Status.FREE;
             StartCoroutine(Move(this.gameObject, shopPosition));
-
-            UpdateShadow();
             return;
         }
 
@@ -312,6 +309,7 @@ public class DragAndDrop : MonoBehaviour
                 {
                     GameManager.Instance.bagAssignments[oldIndexEnterBag - 1] = null;
                 }
+                UpdateShadow();
             }
             else
             {
@@ -323,8 +321,6 @@ public class DragAndDrop : MonoBehaviour
 
             oldIndexEnterBag = indexEnterBag;
             oldBagPosition = bagPosition;
-
-            UpdateShadow();
             return;
         }
 
@@ -336,8 +332,6 @@ public class DragAndDrop : MonoBehaviour
             GameManager.Instance.bagAssignments[oldIndexEnterBag - 1] = null;
             oldIndexEnterBag = -1;
             oldBagPosition = GameManager.Instance.storagePosition.position;
-
-            UpdateShadow();
             return;
         }
 
@@ -351,6 +345,7 @@ public class DragAndDrop : MonoBehaviour
             {
                 GameManager.Instance.bagAssignments[indexEnterBag - 1] = this.gameObject;
                 rb.MovePosition(bagPosition);
+                UpdateShadow();
             }
             // check return to storage
             else
@@ -366,8 +361,6 @@ public class DragAndDrop : MonoBehaviour
             isBuy = true;
             oldIndexEnterBag = indexEnterBag;
             oldBagPosition = bagPosition;
-
-            UpdateShadow();
             return;
         }
 
@@ -377,8 +370,6 @@ public class DragAndDrop : MonoBehaviour
             StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position));
             oldIndexEnterBag = -1;
             oldBagPosition = GameManager.Instance.storagePosition.position;
-
-            UpdateShadow();
             return;
         }
     }
@@ -401,6 +392,13 @@ public class DragAndDrop : MonoBehaviour
         }
 
         weapon.transform.position = to;
+
+        if (to == GameManager.Instance.storagePosition.position)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+        UpdateShadow();
     }
 
     private Vector3 GetMouseWorldPos()
@@ -418,7 +416,10 @@ public class DragAndDrop : MonoBehaviour
             bagPosition = collision.transform.position;
 
             SpriteRenderer shadow = collision.GetComponent<SpriteRenderer>();
-            shadow.color = new Color(1, 1, 1, 0.5f);
+            if (shadow.color.a != 0f)
+            {
+                shadow.color = new Color(1, 1, 1, 0.5f);
+            }
         }
     }
 
@@ -430,7 +431,10 @@ public class DragAndDrop : MonoBehaviour
             indexEnterBag = -1;
 
             SpriteRenderer shadow = collision.GetComponent<SpriteRenderer>();
-            shadow.color = new Color(0, 0, 0, 0.5f);
+            if (shadow.color.a != 0f) 
+            { 
+                shadow.color = new Color(0, 0, 0, 0.5f);
+            }
         }
     }
 
@@ -440,11 +444,11 @@ public class DragAndDrop : MonoBehaviour
         {
             if (GameManager.Instance.bagAssignments[i] == null)
             {
-                GameManager.Instance.bags[i].SetActive(true);
+                GameManager.Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5f);
             }
             else
             {
-                GameManager.Instance.bags[i].SetActive(false);
+                GameManager.Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
             }
         }
     }

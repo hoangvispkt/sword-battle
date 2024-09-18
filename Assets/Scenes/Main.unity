@@ -8221,6 +8221,7 @@ GameObject:
   - component: {fileID: 1093057165}
   - component: {fileID: 1093057164}
   - component: {fileID: 1093057163}
+  - component: {fileID: 1093057166}
   m_Layer: 0
   m_Name: drop point
   m_TagString: Untagged
@@ -8278,10 +8279,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -10.691504, y: 10.411254}
-  - {x: -9.138813, y: 0.40815544}
-  - {x: 8.610376, y: 0.43177223}
-  - {x: 10.047155, y: 10.455693}
+  - {x: -8.302584, y: 13.403574}
+  - {x: -5.588335, y: 0.5911474}
+  - {x: -1.4527702, y: 0.5580106}
+  - {x: 0.8345257, y: 13.40468}
+  - {x: -8.323372, y: 13.401736}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -8301,6 +8303,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 976090570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1093057166
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093057162}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1093329005
 GameObject:
   m_ObjectHideFlags: 0
