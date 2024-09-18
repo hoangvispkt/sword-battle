@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 237345826}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: bag7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2047,8 +2047,8 @@ Transform:
   m_GameObject: {fileID: 237345821}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1600008, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0.32, y: -0.1600008, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 966269832}
@@ -2087,17 +2087,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.1658184}
+  m_Offset: {x: 0, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.56, y: 2.85}
+    oldSize: {x: 5.75, y: 2.78}
     newSize: {x: 4.56, y: 2.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 1.0259929}
+  m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &237345824
 SpriteRenderer:
@@ -2143,8 +2143,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5238095855452222290, guid: 501e8f86681e2694bb70b57d9d74c95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5367,7 +5367,7 @@ GameObject:
   - component: {fileID: 714222940}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: bag2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5381,8 +5381,8 @@ Transform:
   m_GameObject: {fileID: 714222938}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.060000896, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0.32, y: -0.060000896, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1335705874}
@@ -5421,17 +5421,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.04145497}
+  m_Offset: {x: 0, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.56, y: 2.85}
+    oldSize: {x: 5.75, y: 2.78}
     newSize: {x: 4.56, y: 2.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 1.2747201}
+  m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &714222941
 SpriteRenderer:
@@ -5477,8 +5477,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5238095855452222290, guid: 501e8f86681e2694bb70b57d9d74c95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6031,7 +6031,7 @@ GameObject:
   - component: {fileID: 766255689}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: bag6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6045,8 +6045,8 @@ Transform:
   m_GameObject: {fileID: 766255684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.20000029, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0.32, y: -0.20000029, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1309104098}
@@ -6085,17 +6085,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.56, y: 2.85}
+    oldSize: {x: 5.75, y: 2.78}
     newSize: {x: 4.56, y: 2.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 1.1918111}
+  m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &766255687
 SpriteRenderer:
@@ -6141,8 +6141,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5238095855452222290, guid: 501e8f86681e2694bb70b57d9d74c95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8885,7 +8885,7 @@ GameObject:
   - component: {fileID: 1141318702}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: bag4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8899,8 +8899,8 @@ Transform:
   m_GameObject: {fileID: 1141318697}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.28000045, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0.32, y: -0.28000045, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 133348822}
@@ -8939,17 +8939,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.12436402}
+  m_Offset: {x: 0, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.56, y: 2.85}
+    oldSize: {x: 5.75, y: 2.78}
     newSize: {x: 4.56, y: 2.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 1.2747214}
+  m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &1141318700
 SpriteRenderer:
@@ -8995,8 +8995,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5238095855452222290, guid: 501e8f86681e2694bb70b57d9d74c95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9045,7 +9045,7 @@ GameObject:
   - component: {fileID: 1152605641}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: bag5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9059,8 +9059,8 @@ Transform:
   m_GameObject: {fileID: 1152605636}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.24000025, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0.32, y: -0.24000025, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1368908733}
@@ -9099,17 +9099,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.082909495}
+  m_Offset: {x: 0, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.56, y: 2.85}
+    oldSize: {x: 5.75, y: 2.78}
     newSize: {x: 4.56, y: 2.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 1.0259924}
+  m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &1152605639
 SpriteRenderer:
@@ -9155,8 +9155,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5238095855452222290, guid: 501e8f86681e2694bb70b57d9d74c95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14093,7 +14093,7 @@ GameObject:
   - component: {fileID: 1698334848}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: bag1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14107,8 +14107,8 @@ Transform:
   m_GameObject: {fileID: 1698334845}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0.32, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 797040641}
@@ -14157,8 +14157,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5238095855452222290, guid: 501e8f86681e2694bb70b57d9d74c95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14202,17 +14202,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.041454434}
+  m_Offset: {x: 0, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.56, y: 2.85}
+    oldSize: {x: 5.75, y: 2.78}
     newSize: {x: 4.56, y: 2.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 1.2747204}
+  m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!1 &1725996480
 GameObject:
@@ -14229,7 +14229,7 @@ GameObject:
   - component: {fileID: 1725996485}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: bag3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14243,8 +14243,8 @@ Transform:
   m_GameObject: {fileID: 1725996480}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.26000047, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalPosition: {x: 0.32, y: -0.26000047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 656843927}
@@ -14283,17 +14283,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.082909405}
+  m_Offset: {x: 0, y: 0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.56, y: 2.85}
+    oldSize: {x: 5.75, y: 2.78}
     newSize: {x: 4.56, y: 2.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.56, y: 1.1918119}
+  m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &1725996483
 SpriteRenderer:
@@ -14339,8 +14339,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5238095855452222290, guid: 501e8f86681e2694bb70b57d9d74c95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7134957769437635874, guid: 9a321e2a4d683064f987ddc7063d376f, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6431373}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16028,7 +16028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956615390}
   m_Layer: 0
-  m_Name: create point
+  m_Name: Storage Point
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -16043,7 +16043,7 @@ Transform:
   m_GameObject: {fileID: 1956615389}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.250304, y: -2.79, z: 0.3977095}
+  m_LocalPosition: {x: -1.02, y: -2.32, z: 0.3977095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16967,6 +16967,10 @@ PrefabInstance:
       propertyPath: rightCharacter
       value: 
       objectReference: {fileID: 1461540857}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: storagePosition
+      value: 
+      objectReference: {fileID: 1956615390}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: rightCharacterUI
       value: 

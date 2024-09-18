@@ -4,14 +4,14 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - plus
-  - point
-  - rope
-  - rope0
-  - weapo
-  - kiem
-  - sword
   - bag
+  - bag1
+  - bag2
+  - bag3
+  - bag4
+  - bag5
+  - bag6
+  - bag7
   layers:
   - Default
   - TransparentFX

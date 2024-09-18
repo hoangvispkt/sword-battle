@@ -1,6 +1,7 @@
-using DamageNumbersPro;
+﻿using DamageNumbersPro;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> itemsPrefab;
     public List<GameObject> shopItemPositions;
     public Camera worldCamera;
+    public Transform storagePosition;  // Vị trí mà weapon sẽ rơi vào khi bị thay thế
+    public GameObject[] bagAssignments = new GameObject[7];  // Mảng lưu trữ 7 bag
+
 
     public Character leftChar;
     public Character rightChar;
