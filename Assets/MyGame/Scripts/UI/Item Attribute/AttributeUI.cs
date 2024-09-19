@@ -9,6 +9,8 @@ public enum WeaponAttribute
     MP,
     ATTACK_SPEED,
     CRIT,
+    CRIT_DAMAGE,
+    DODGE,
     ARMOR,
     STR,
     AGI,
