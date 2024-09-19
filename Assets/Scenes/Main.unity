@@ -3089,7 +3089,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352170686}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6d8cf2f056b5e14a9e10891039db970, type: 3}
   m_Name: 
@@ -3107,12 +3107,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352170686}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6d8cf2f056b5e14a9e10891039db970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 1908910536438119489, guid: 2293fa01a18fd4643a1a9af0bafba7ca, type: 3}
+  weapon: {fileID: 0}
   spawnPoint: {fileID: 656843927}
   pointUp: {fileID: 953534656}
   pointDown: {fileID: 735391577}
@@ -3130,7 +3130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d8cf2f056b5e14a9e10891039db970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 3235652923340777033, guid: 8a5d7f90d60789c439b39dea1f121d6e, type: 3}
+  weapon: {fileID: 0}
   spawnPoint: {fileID: 1335705874}
   pointUp: {fileID: 1512965713}
   pointDown: {fileID: 1251155893}
@@ -3161,7 +3161,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352170686}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6d8cf2f056b5e14a9e10891039db970, type: 3}
   m_Name: 
@@ -3179,7 +3179,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352170686}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6d8cf2f056b5e14a9e10891039db970, type: 3}
   m_Name: 
@@ -3197,7 +3197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352170686}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6d8cf2f056b5e14a9e10891039db970, type: 3}
   m_Name: 
@@ -4762,7 +4762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 607443668}
   m_Layer: 5
-  m_Name: Left
+  m_Name: LeftUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13384,7 +13384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1624741505}
   m_Layer: 5
-  m_Name: Right
+  m_Name: RightUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16874,6 +16874,10 @@ PrefabInstance:
       propertyPath: bags
       value: 
       objectReference: {fileID: 1698334845}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 352170686}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: shop
       value: 

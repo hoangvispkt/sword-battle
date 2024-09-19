@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b98445d8104ae9649ba2f15beedd8fdd, type: 3}
-  m_Name: "Huy\u1EC1n Thi\u1EBFt Ki\u1EBFm"
+  m_Name: "Th\u1EA7n H\u01B0 Ki\u1EBFm"
   m_EditorClassIdentifier: 
   attributes:
   - attribute: 0
-    value: 10
+    value: 7
   - attribute: 1
-    value: 20
+    value: 2
+  - attribute: 2
+    value: 3
   - attribute: 3
-    value: 1
+    value: 1.2
+  - attribute: 8
+    value: 3

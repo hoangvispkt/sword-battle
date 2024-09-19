@@ -32,7 +32,6 @@ public class ItemManager: MonoBehaviour
             {
                 return attributes[i].value;
             }
-            break;
         }
 
         return 0f;

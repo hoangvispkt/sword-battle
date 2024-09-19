@@ -1,7 +1,6 @@
 ﻿using DamageNumbersPro;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,7 +18,9 @@ public class GameManager : MonoBehaviour
     public Transform storagePosition;  // Vị trí mà weapon sẽ rơi vào khi bị thay thế
     public GameObject[] bagAssignments = new GameObject[7];  // Mảng lưu trữ 7 bag
     public GameObject[] bags = new GameObject[7];
-
+    public GameObject left;
+    private WeaponController[] weaponControllers;
+    public SpriteRenderer[] weaponAvatars = new SpriteRenderer[7];
 
     public Character leftChar;
     public Character rightChar;
@@ -28,6 +29,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        weaponControllers = left.GetComponents<WeaponController>();
+
+        int index = 0;
+        foreach (Transform child in left.transform)
+        {
+            if (child.name.StartsWith("Left Weapon"))
+            {
+                weaponAvatars[index] = child.GetComponent<SpriteRenderer>();
+                index++;
+            }
+        }
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -83,6 +96,8 @@ public class GameManager : MonoBehaviour
         Instance.shop.SetActive(false);
         Instance.rightCharacter.SetActive(true);
         Instance.rightCharacterUI.SetActive(true);
+        HideShadow();
+        ShowWeaponAvatar();
     }
 
     public void CloseDialog(GameObject dialog)
@@ -162,6 +177,54 @@ public class GameManager : MonoBehaviour
                 default:
                     Debug.LogWarning("Unknown attribute: " + attribute.attribute);
                     break;
+            }
+        }
+    }
+
+    public void UpdateShadow()
+    {
+        for (int i = 0; i < Instance.bagAssignments.Length; i++)
+        {
+            if (Instance.bagAssignments[i] == null)
+            {
+                Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5f);
+            }
+            else
+            {
+                Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+            }
+        }
+    }
+
+    public void HideShadow()
+    {
+        for (int i = 0; i < Instance.bags.Length; i++)
+        {
+            Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        }
+    }
+
+    public void UpdateUI(int slot, GameObject weapon)
+    {
+        Instance.bagAssignments[slot] = weapon;
+        Instance.weaponControllers[slot].weapon = weapon;
+        Instance.weaponAvatars[slot].sprite = weapon.GetComponent<SpriteRenderer>().sprite;
+
+        if (weapon != null)
+        {
+            List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(weapon);
+            float attackSpeed = ItemManager.Instance.GetValue(attributes, WeaponAttribute.ATTACK_SPEED);
+            Instance.weaponControllers[slot].attackSpeed = attackSpeed;
+        }
+    }
+
+    public void ShowWeaponAvatar()
+    {
+        for (int i = 0; i < Instance.weaponAvatars.Length; i++)
+        {
+            if (Instance.bagAssignments[i] != null)
+            {
+                Instance.weaponAvatars[i].enabled = true;
             }
         }
     }

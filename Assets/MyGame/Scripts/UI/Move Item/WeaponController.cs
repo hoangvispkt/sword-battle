@@ -20,7 +20,7 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.Instance.isStartGame) return;
+        if (!GameManager.Instance.isStartGame || this.weapon == null) return;
         if (CanAttack())
         {
             GameObject newWeapon = Instantiate(this.weapon, spawnPoint.position, spawnPoint.rotation);

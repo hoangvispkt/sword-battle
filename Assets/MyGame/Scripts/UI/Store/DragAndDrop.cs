@@ -48,8 +48,8 @@ public class DragAndDrop : MonoBehaviour
                 status = Status.FREE;
                 rb.MovePosition(bagPosition);
 
-                GameManager.Instance.bagAssignments[indexEnterBag - 1] = this.gameObject;
-                GameManager.Instance.bagAssignments[oldIndexEnterBag - 1] = current;
+                GameManager.Instance.UpdateUI(indexEnterBag - 1, this.gameObject);
+                GameManager.Instance.UpdateUI(oldIndexEnterBag - 1, current);
 
                 current.GetComponent<DragAndDrop>().oldIndexEnterBag = oldIndexEnterBag;
                 current.GetComponent<DragAndDrop>().oldBagPosition = oldBagPosition;
@@ -63,7 +63,7 @@ public class DragAndDrop : MonoBehaviour
 
         }
 
-        // check return to shop
+        // shop -> shop
         if (indexEnterBag == -1 && !isBuy)
         {
             status = Status.FREE;
@@ -71,26 +71,27 @@ public class DragAndDrop : MonoBehaviour
             return;
         }
 
-        // check move to another bag
+        // bag -> bag
         if (indexEnterBag != -1 && isBuy)
         {
             status = Status.FREE;
             rb.MovePosition(bagPosition);
 
             GameObject current = GameManager.Instance.bagAssignments[indexEnterBag - 1];
+            GameManager.Instance.UpdateUI(indexEnterBag - 1, this.gameObject);
+            // bag -> bag without weapon
             if (current == null)
             {
-                GameManager.Instance.bagAssignments[indexEnterBag - 1] = this.gameObject;
                 if (oldIndexEnterBag != -1)
                 {
-                    GameManager.Instance.bagAssignments[oldIndexEnterBag - 1] = null;
+                    GameManager.Instance.UpdateUI(oldIndexEnterBag - 1, null);
                 }
-                UpdateShadow();
+                GameManager.Instance.UpdateShadow();
             }
+            // bag -> bag with weapon
             else
             {
                 StartCoroutine(Move(current, GameManager.Instance.storagePosition.position));
-                GameManager.Instance.bagAssignments[indexEnterBag - 1] = this.gameObject;
                 current.GetComponent<DragAndDrop>().oldIndexEnterBag = -1;
                 current.GetComponent<DragAndDrop>().oldBagPosition = GameManager.Instance.storagePosition.position;
             }
@@ -100,35 +101,34 @@ public class DragAndDrop : MonoBehaviour
             return;
         }
 
-        // check return to bag
+        // bag -> storage
         if (indexEnterBag == -1 && isBuy && oldIndexEnterBag != -1)
         {
             status = Status.FREE;
+            GameManager.Instance.UpdateUI(oldIndexEnterBag - 1, null);
             StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position));
-            GameManager.Instance.bagAssignments[oldIndexEnterBag - 1] = null;
-            oldIndexEnterBag = -1;
             oldBagPosition = GameManager.Instance.storagePosition.position;
+            oldIndexEnterBag = -1;
             return;
         }
 
-        // buy weapon
+        // shop -> bag
         if (indexEnterBag != -1)
         {
             GameObject current = GameManager.Instance.bagAssignments[indexEnterBag - 1];
-
-            // equip
+            GameManager.Instance.UpdateUI(indexEnterBag - 1, this.gameObject);
+            // shop -> bag
             if (current == null)
             {
-                GameManager.Instance.bagAssignments[indexEnterBag - 1] = this.gameObject;
                 rb.MovePosition(bagPosition);
-                UpdateShadow();
+                GameManager.Instance.UpdateShadow();
             }
-            // check return to storage
+            // new weapon: shop -> bag
+            // previous weapon: bag -> storage
             else
             {
                 rb.MovePosition(bagPosition);
                 StartCoroutine(Move(current, GameManager.Instance.storagePosition.position));
-                GameManager.Instance.bagAssignments[indexEnterBag - 1] = this.gameObject;
                 current.GetComponent<DragAndDrop>().oldIndexEnterBag = -1;
                 current.GetComponent<DragAndDrop>().oldBagPosition = GameManager.Instance.storagePosition.position;
             }
@@ -140,6 +140,7 @@ public class DragAndDrop : MonoBehaviour
             return;
         }
 
+        // storage -> storage
         if (indexEnterBag == -1 && isBuy && oldIndexEnterBag == -1)
         {
             status = Status.FREE;
@@ -174,7 +175,7 @@ public class DragAndDrop : MonoBehaviour
             weapon.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
 
-        UpdateShadow();
+        GameManager.Instance.UpdateShadow();
     }
 
     private Vector3 GetMouseWorldPos()
@@ -210,21 +211,6 @@ public class DragAndDrop : MonoBehaviour
             if (shadow.color.a != 0f) 
             { 
                 shadow.color = new Color(0, 0, 0, 0.5f);
-            }
-        }
-    }
-
-    private void UpdateShadow()
-    {
-        for (int i = 0; i < GameManager.Instance.bagAssignments.Length; i++)
-        {
-            if (GameManager.Instance.bagAssignments[i] == null)
-            {
-                GameManager.Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5f);
-            }
-            else
-            {
-                GameManager.Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
             }
         }
     }
