@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] bags = new GameObject[7];
     public GameObject left;
     private WeaponController[] weaponControllers;
-    public SpriteRenderer[] weaponAvatars = new SpriteRenderer[7];
+    public Transform[] weaponAvatars = new Transform[7];
 
     public Character leftChar;
     public Character rightChar;
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         {
             if (child.name.StartsWith("Left Weapon"))
             {
-                weaponAvatars[index] = child.GetComponent<SpriteRenderer>();
+                weaponAvatars[index] = child;
                 index++;
             }
         }
@@ -208,7 +208,8 @@ public class GameManager : MonoBehaviour
     {
         Instance.bagAssignments[slot] = weapon;
         Instance.weaponControllers[slot].weapon = weapon;
-        Instance.weaponAvatars[slot].sprite = weapon.GetComponent<SpriteRenderer>().sprite;
+        Instance.weaponAvatars[slot].GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<SpriteRenderer>().sprite;
+        Instance.weaponAvatars[slot].GetComponent<Transform>().localScale = weapon.GetComponent<Transform>().localScale;
 
         if (weapon != null)
         {
@@ -224,7 +225,7 @@ public class GameManager : MonoBehaviour
         {
             if (Instance.bagAssignments[i] != null)
             {
-                Instance.weaponAvatars[i].enabled = true;
+                Instance.weaponAvatars[i].GetComponent<SpriteRenderer>().enabled = true;
             }
         }
     }
