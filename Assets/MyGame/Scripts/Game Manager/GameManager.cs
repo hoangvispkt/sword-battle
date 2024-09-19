@@ -107,4 +107,62 @@ public class GameManager : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
+
+    public void UpdateCharacterStats(GameObject newWeapon, GameObject oldWeapon)
+    {
+        // Add new weapon stats
+        UpdateAttributes(ItemManager.Instance.GetAttributes(newWeapon), true);
+
+        // Remove old weapon stats
+        UpdateAttributes(ItemManager.Instance.GetAttributes(oldWeapon), false);
+    }
+
+    private void UpdateAttributes(List<AttributeOption> attributes, bool isAdding)
+    {
+        foreach (var attribute in attributes)
+        {
+            int value = (int)attribute.value * (isAdding ? 1 : -1);
+
+            switch (attribute.attribute)
+            {
+                case WeaponAttribute.DAMAGE:
+                    leftChar.damage += value;
+                    break;
+                case WeaponAttribute.HP:
+                    leftChar.hp += value;
+                    //UpdateHp(); // Uncomment to update health bar when HP changes
+                    break;
+                case WeaponAttribute.MP:
+                    leftChar.mp += value;
+                    break;
+                case WeaponAttribute.ATTACK_SPEED:
+                    leftChar.attackSpeed += value;
+                    break;
+                case WeaponAttribute.CRIT:
+                    leftChar.crit += value;
+                    break;
+                case WeaponAttribute.ARMOR:
+                    leftChar.armor += value;
+                    break;
+                case WeaponAttribute.STR:
+                    leftChar.str += value;
+                    break;
+                case WeaponAttribute.AGI:
+                    leftChar.agi += value;
+                    break;
+                case WeaponAttribute.INT:
+                    leftChar.intel += value;
+                    break;
+                case WeaponAttribute.DEX:
+                    leftChar.dex += value;
+                    break;
+                case WeaponAttribute.LUCK:
+                    leftChar.luck += value;
+                    break;
+                default:
+                    Debug.LogWarning("Unknown attribute: " + attribute.attribute);
+                    break;
+            }
+        }
+    }
 }
