@@ -37,7 +37,7 @@ public class DragAndDrop : MonoBehaviour
         status = Status.DRAGGING;
     }
 
-    private void OnMouseUp()
+    private async void OnMouseUp()
     {
         // check if swap
         if (indexEnterBag != -1 && isBuy && oldIndexEnterBag != -1)
@@ -54,7 +54,7 @@ public class DragAndDrop : MonoBehaviour
                 current.GetComponent<DragAndDrop>().oldIndexEnterBag = oldIndexEnterBag;
                 current.GetComponent<DragAndDrop>().oldBagPosition = oldBagPosition;
 
-                StartCoroutine(Move(current, oldBagPosition));
+                StartCoroutine(Move(current, oldBagPosition, false));
 
                 oldIndexEnterBag = indexEnterBag;
                 oldBagPosition = bagPosition;
@@ -67,7 +67,7 @@ public class DragAndDrop : MonoBehaviour
         if (indexEnterBag == -1 && !isBuy)
         {
             status = Status.FREE;
-            StartCoroutine(Move(this.gameObject, shopPosition));
+            StartCoroutine(Move(this.gameObject, shopPosition, false));
             return;
         }
 
@@ -91,7 +91,7 @@ public class DragAndDrop : MonoBehaviour
             // bag -> bag with weapon
             else
             {
-                StartCoroutine(Move(current, GameManager.Instance.storagePosition.position));
+                StartCoroutine(Move(current, GameManager.Instance.storagePosition.position, false));
                 current.GetComponent<DragAndDrop>().oldIndexEnterBag = -1;
                 current.GetComponent<DragAndDrop>().oldBagPosition = GameManager.Instance.storagePosition.position;
             }
@@ -106,7 +106,7 @@ public class DragAndDrop : MonoBehaviour
         {
             status = Status.FREE;
             GameManager.Instance.UpdateUI(oldIndexEnterBag - 1, null);
-            StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position));
+            StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position, false));
             oldBagPosition = GameManager.Instance.storagePosition.position;
             oldIndexEnterBag = -1;
             return;
@@ -120,7 +120,8 @@ public class DragAndDrop : MonoBehaviour
             // shop -> bag
             if (current == null)
             {
-                rb.MovePosition(bagPosition);
+                //rb.MovePosition(bagPosition);
+                StartCoroutine(Move(this.gameObject, bagPosition, true));
                 GameManager.Instance.UpdateShadow();
             }
             // new weapon: shop -> bag
@@ -128,7 +129,7 @@ public class DragAndDrop : MonoBehaviour
             else
             {
                 rb.MovePosition(bagPosition);
-                StartCoroutine(Move(current, GameManager.Instance.storagePosition.position));
+                StartCoroutine(Move(current, GameManager.Instance.storagePosition.position, true));
                 current.GetComponent<DragAndDrop>().oldIndexEnterBag = -1;
                 current.GetComponent<DragAndDrop>().oldBagPosition = GameManager.Instance.storagePosition.position;
             }
@@ -144,7 +145,7 @@ public class DragAndDrop : MonoBehaviour
         if (indexEnterBag == -1 && isBuy && oldIndexEnterBag == -1)
         {
             status = Status.FREE;
-            StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position));
+            StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position, false));
             oldIndexEnterBag = -1;
             oldBagPosition = GameManager.Instance.storagePosition.position;
             return;
@@ -160,7 +161,7 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    private IEnumerator Move(GameObject weapon, Vector3 to)
+    private IEnumerator Move(GameObject weapon, Vector3 to, bool isBuy)
     {
         while (Vector3.Distance(weapon.transform.position, to) > 0.01f)
         {
@@ -176,6 +177,12 @@ public class DragAndDrop : MonoBehaviour
         }
 
         GameManager.Instance.UpdateShadow();
+
+        if (isBuy)
+        {
+            this.gameObject.transform.SetParent(GameManager.Instance.items, true);
+
+        }
     }
 
     private Vector3 GetMouseWorldPos()

@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 96500648}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2029,10 +2029,8 @@ GameObject:
   - component: {fileID: 237345822}
   - component: {fileID: 237345824}
   - component: {fileID: 237345823}
-  - component: {fileID: 237345825}
-  - component: {fileID: 237345826}
   m_Layer: 0
-  m_Name: Bag 7
+  m_Name: Shadow 7
   m_TagString: bag7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2154,30 +2152,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &237345825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237345821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &237345826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237345821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &238124623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,7 +2497,7 @@ GameObject:
   - component: {fileID: 293852629}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3510,7 +3484,7 @@ GameObject:
   - component: {fileID: 397089263}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4570,7 +4544,7 @@ GameObject:
   - component: {fileID: 594384010}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5349,7 +5323,7 @@ Transform:
   m_GameObject: {fileID: 714034073}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.42, y: -2.08, z: 0}
+  m_LocalPosition: {x: 9.42, y: -2.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5367,7 +5341,7 @@ GameObject:
   - component: {fileID: 714222941}
   - component: {fileID: 714222940}
   m_Layer: 0
-  m_Name: Bag 2
+  m_Name: Shadow 2
   m_TagString: bag2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5383,7 +5357,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.32, y: -0.060000896, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1335705874}
@@ -6028,10 +6002,8 @@ GameObject:
   - component: {fileID: 766255685}
   - component: {fileID: 766255687}
   - component: {fileID: 766255686}
-  - component: {fileID: 766255688}
-  - component: {fileID: 766255689}
   m_Layer: 0
-  m_Name: Bag 6
+  m_Name: Shadow 6
   m_TagString: bag6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6153,30 +6125,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &766255688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766255684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &766255689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766255684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &769458153
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,7 +6493,7 @@ GameObject:
   - component: {fileID: 799256550}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8864,10 +8812,8 @@ GameObject:
   - component: {fileID: 1141318698}
   - component: {fileID: 1141318700}
   - component: {fileID: 1141318699}
-  - component: {fileID: 1141318701}
-  - component: {fileID: 1141318702}
   m_Layer: 0
-  m_Name: Bag 4
+  m_Name: Shadow 4
   m_TagString: bag4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8989,30 +8935,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1141318701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141318697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1141318702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141318697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1152605636
 GameObject:
   m_ObjectHideFlags: 0
@@ -9024,10 +8946,8 @@ GameObject:
   - component: {fileID: 1152605637}
   - component: {fileID: 1152605639}
   - component: {fileID: 1152605638}
-  - component: {fileID: 1152605640}
-  - component: {fileID: 1152605641}
   m_Layer: 0
-  m_Name: Bag 5
+  m_Name: Shadow 5
   m_TagString: bag5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9149,30 +9069,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1152605640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152605636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1152605641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152605636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1163569233
 GameObject:
   m_ObjectHideFlags: 0
@@ -12350,7 +12246,7 @@ Transform:
   m_GameObject: {fileID: 1530542227}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.42, y: -2.08, z: 0}
+  m_LocalPosition: {x: 9.415, y: -2.137, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14032,7 +13928,7 @@ GameObject:
   - component: {fileID: 1698334847}
   - component: {fileID: 1698334848}
   m_Layer: 0
-  m_Name: Bag 1
+  m_Name: Shadow 1
   m_TagString: bag1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14165,10 +14061,8 @@ GameObject:
   - component: {fileID: 1725996481}
   - component: {fileID: 1725996483}
   - component: {fileID: 1725996482}
-  - component: {fileID: 1725996484}
-  - component: {fileID: 1725996485}
   m_Layer: 0
-  m_Name: Bag 3
+  m_Name: Shadow 3
   m_TagString: bag3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14290,30 +14184,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1725996484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725996480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85785d0b213644984a6d2dbfbca12d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1725996485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725996480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29e0df588014c259667ae5ec8ed245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1733234623
 GameObject:
   m_ObjectHideFlags: 0
@@ -14853,7 +14723,7 @@ GameObject:
   - component: {fileID: 1792921102}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15020,7 +14890,7 @@ GameObject:
   - component: {fileID: 1824953723}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: bag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

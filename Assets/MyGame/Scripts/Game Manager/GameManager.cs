@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] bags = new GameObject[7];
     public GameObject left;
     private WeaponController[] weaponControllers;
-    public Transform[] weaponAvatars = new Transform[7];
+    public Transform items;
 
     public Character leftChar;
     public Character rightChar;
@@ -30,16 +30,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         weaponControllers = left.GetComponents<WeaponController>();
-
-        int index = 0;
-        foreach (Transform child in left.transform)
-        {
-            if (child.name.StartsWith("Left Weapon"))
-            {
-                weaponAvatars[index] = child;
-                index++;
-            }
-        }
 
         if (Instance != null && Instance != this)
         {
@@ -97,7 +87,7 @@ public class GameManager : MonoBehaviour
         Instance.rightCharacter.SetActive(true);
         Instance.rightCharacterUI.SetActive(true);
         HideShadow();
-        ShowWeaponAvatar();
+        //ShowWeaponAvatar();
     }
 
     public void CloseDialog(GameObject dialog)
@@ -208,25 +198,11 @@ public class GameManager : MonoBehaviour
     {
         Instance.bagAssignments[slot] = weapon;
         Instance.weaponControllers[slot].weapon = weapon;
-        Instance.weaponAvatars[slot].GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<SpriteRenderer>().sprite;
-        Instance.weaponAvatars[slot].GetComponent<Transform>().localScale = weapon.GetComponent<Transform>().localScale;
-
         if (weapon != null)
         {
             List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(weapon);
             float attackSpeed = ItemManager.Instance.GetValue(attributes, WeaponAttribute.ATTACK_SPEED);
             Instance.weaponControllers[slot].attackSpeed = attackSpeed;
-        }
-    }
-
-    public void ShowWeaponAvatar()
-    {
-        for (int i = 0; i < Instance.weaponAvatars.Length; i++)
-        {
-            if (Instance.bagAssignments[i] != null)
-            {
-                Instance.weaponAvatars[i].GetComponent<SpriteRenderer>().enabled = true;
-            }
         }
     }
 }
