@@ -17640,6 +17640,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 340117852019332781, guid: 157ab3c35e5d2e64dbc1067134926fd4, type: 3}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: shopItemPrices.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: 'bagAssignments.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
@@ -17671,6 +17675,38 @@ PrefabInstance:
       propertyPath: shopItemPositions.Array.size
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'shopItemPrices.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1367498329}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'shopItemPrices.Array.data[1]'
+      value: 
+      objectReference: {fileID: 713763395}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'shopItemPrices.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1081330670}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'shopItemPrices.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1103985411}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'shopItemPrices.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1662082776}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'shopItemPrices.Array.data[5]'
+      value: 
+      objectReference: {fileID: 562446873}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'shopItemPrices.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1095974315}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: 'shopItemPrices.Array.data[7]'
+      value: 
+      objectReference: {fileID: 1386992771}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: 'shopItemPositions.Array.data[0]'
       value: 

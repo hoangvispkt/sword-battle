@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject rightCharacterUI;
     public List<GameObject> itemsPrefab;
     public List<GameObject> shopItemPositions;
+    public List<TextMeshProUGUI> shopItemPrices;
     public Camera worldCamera;
     public Transform storagePosition;  // Vị trí mà weapon sẽ rơi vào khi bị thay thế
     public GameObject[] bagAssignments = new GameObject[7];  // Mảng lưu trữ 7 bag
@@ -111,6 +112,7 @@ public class GameManager : MonoBehaviour
         Instance.leftChar.win++;
         Instance.leftChar.hp += 20;
         UpdateUI();
+        Roll();
     }
 
     public void CloseDialogLose()
@@ -132,6 +134,7 @@ public class GameManager : MonoBehaviour
             ResetGame();
         }
         UpdateUI();
+        Roll();
     }
 
     public void ResetGame()
@@ -146,6 +149,9 @@ public class GameManager : MonoBehaviour
             ClearChildObjects(shopItemPositions[i]);
             int index = UnityEngine.Random.Range(0, itemsPrefab.Count);
             GameObject newItem = Instantiate(itemsPrefab[index], shopItemPositions[i].transform);
+            List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(newItem);
+            int price = (int)ItemManager.Instance.GetValue(attributes, WeaponAttribute.PRICE);
+            Instance.shopItemPrices[i].text = price.ToString();
         }
     }
 

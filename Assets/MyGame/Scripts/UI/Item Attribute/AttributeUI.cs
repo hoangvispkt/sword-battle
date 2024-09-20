@@ -17,6 +17,7 @@ public enum WeaponAttribute
     INT,
     DEX,
     LUCK,
+    PRICE
 }
 
 [System.Serializable]
