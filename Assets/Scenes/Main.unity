@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 96500648}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: sword
+  m_TagString: bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2523,7 +2523,7 @@ GameObject:
   - component: {fileID: 293852629}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: sword
+  m_TagString: bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3080,6 +3080,7 @@ Transform:
   - {fileID: 966269832}
   - {fileID: 1656621513}
   - {fileID: 2106802502}
+  - {fileID: 1749018898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &352170688
@@ -3509,7 +3510,7 @@ GameObject:
   - component: {fileID: 397089263}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: sword
+  m_TagString: bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4569,7 +4570,7 @@ GameObject:
   - component: {fileID: 594384010}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: sword
+  m_TagString: bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6544,7 +6545,7 @@ GameObject:
   - component: {fileID: 799256550}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: sword
+  m_TagString: bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13393,7 +13394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1624741505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14702,6 +14703,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745642590}
   m_CullTransparentMesh: 1
+--- !u!1 &1749018897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749018898}
+  m_Layer: 0
+  m_Name: Items
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1749018898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749018897}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 352170687}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767714760
 GameObject:
   m_ObjectHideFlags: 0
@@ -14821,7 +14853,7 @@ GameObject:
   - component: {fileID: 1792921102}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: sword
+  m_TagString: bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14988,7 +15020,7 @@ GameObject:
   - component: {fileID: 1824953723}
   m_Layer: 0
   m_Name: Bag
-  m_TagString: sword
+  m_TagString: bag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16886,6 +16918,10 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 976090569}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: items
+      value: 
+      objectReference: {fileID: 1749018898}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: leftChar
       value: 
