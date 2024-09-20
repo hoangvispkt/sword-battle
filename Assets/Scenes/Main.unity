@@ -1056,11 +1056,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 93141319}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CloseDialog
-        m_Mode: 2
+        m_MethodName: CloseDialogLose
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 162577588}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2036,7 +2036,7 @@ GameObject:
   - component: {fileID: 204342894}
   - component: {fileID: 204342893}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: Life Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3007,7 +3007,7 @@ GameObject:
   - component: {fileID: 325653238}
   - component: {fileID: 325653237}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Life Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3765,11 +3765,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 93141319}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CloseDialog
-        m_Mode: 2
+        m_MethodName: CloseDialogWin
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 13543243}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4599,7 +4599,7 @@ GameObject:
   - component: {fileID: 548648955}
   - component: {fileID: 548648954}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: Win Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5389,6 +5389,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 925399158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &670890858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7675747250299743659, guid: d3588cf1d195cb1438cb9b4f47bd47ee, type: 3}
+  m_PrefabInstance: {fileID: 183722229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &686394231
 GameObject:
   m_ObjectHideFlags: 0
@@ -5948,6 +5953,11 @@ MonoBehaviour:
   intel: 0
   dex: 0
   luck: 0
+  gold: 0
+  life: 0
+  win: 0
+  lose: 0
+  round: 0
   hpBar: {fileID: 1556566721}
   hpText: {fileID: 895791637}
 --- !u!1 &731253028
@@ -7586,7 +7596,7 @@ GameObject:
   - component: {fileID: 940922541}
   - component: {fileID: 940922540}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: Round Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10135,7 +10145,7 @@ GameObject:
   - component: {fileID: 1253786197}
   - component: {fileID: 1253786196}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Gold Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11035,7 +11045,7 @@ GameObject:
   - component: {fileID: 1332123440}
   - component: {fileID: 1332123439}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Win Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14268,6 +14278,11 @@ MonoBehaviour:
   intel: 0
   dex: 0
   luck: 0
+  gold: 20
+  life: 5
+  win: 0
+  lose: 0
+  round: 0
   hpBar: {fileID: 2051528258}
   hpText: {fileID: 2031343236}
 --- !u!1 &1660620050
@@ -15230,7 +15245,7 @@ GameObject:
   - component: {fileID: 1745642593}
   - component: {fileID: 1745642592}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: Lose Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15367,7 +15382,7 @@ GameObject:
   - component: {fileID: 1785703902}
   - component: {fileID: 1785703901}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: Gold Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16181,7 +16196,7 @@ GameObject:
   - component: {fileID: 1906561853}
   - component: {fileID: 1906561852}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Lose Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16675,7 +16690,7 @@ GameObject:
   - component: {fileID: 1959656314}
   - component: {fileID: 1959656313}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Round Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17360,7 +17375,7 @@ GameObject:
   - component: {fileID: 2103882889}
   - component: {fileID: 2103882890}
   m_Layer: 5
-  m_Name: Coin
+  m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17513,6 +17528,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1749018898}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: winUI
+      value: 
+      objectReference: {fileID: 1332123439}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: goldUI
+      value: 
+      objectReference: {fileID: 1253786196}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: lifeUI
+      value: 
+      objectReference: {fileID: 325653237}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: loseUI
+      value: 
+      objectReference: {fileID: 1906561852}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: roundUI
+      value: 
+      objectReference: {fileID: 1959656313}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: leftChar
       value: 
       objectReference: {fileID: 1656621515}
@@ -17528,6 +17563,10 @@ PrefabInstance:
       propertyPath: dialogLose
       value: 
       objectReference: {fileID: 162577588}
+    - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
+      propertyPath: rollButton
+      value: 
+      objectReference: {fileID: 670890858}
     - target: {fileID: 6102736113346486865, guid: ba319610900a0474588275b091d0c9af, type: 3}
       propertyPath: isStartGame
       value: 0

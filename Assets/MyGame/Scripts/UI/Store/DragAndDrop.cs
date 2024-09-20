@@ -48,8 +48,8 @@ public class DragAndDrop : MonoBehaviour
                 status = Status.FREE;
                 rb.MovePosition(bagPosition);
 
-                GameManager.Instance.UpdateUI(indexEnterBag - 1, this.gameObject);
-                GameManager.Instance.UpdateUI(oldIndexEnterBag - 1, current);
+                GameManager.Instance.UpdateWeaponUI(indexEnterBag - 1, this.gameObject);
+                GameManager.Instance.UpdateWeaponUI(oldIndexEnterBag - 1, current);
 
                 current.GetComponent<DragAndDrop>().oldIndexEnterBag = oldIndexEnterBag;
                 current.GetComponent<DragAndDrop>().oldBagPosition = oldBagPosition;
@@ -78,13 +78,13 @@ public class DragAndDrop : MonoBehaviour
             rb.MovePosition(bagPosition);
 
             GameObject current = GameManager.Instance.bagAssignments[indexEnterBag - 1];
-            GameManager.Instance.UpdateUI(indexEnterBag - 1, this.gameObject);
+            GameManager.Instance.UpdateWeaponUI(indexEnterBag - 1, this.gameObject);
             // bag -> bag without weapon
             if (current == null)
             {
                 if (oldIndexEnterBag != -1)
                 {
-                    GameManager.Instance.UpdateUI(oldIndexEnterBag - 1, null);
+                    GameManager.Instance.UpdateWeaponUI(oldIndexEnterBag - 1, null);
                 }
                 GameManager.Instance.UpdateShadow();
             }
@@ -105,7 +105,7 @@ public class DragAndDrop : MonoBehaviour
         if (indexEnterBag == -1 && isBuy && oldIndexEnterBag != -1)
         {
             status = Status.FREE;
-            GameManager.Instance.UpdateUI(oldIndexEnterBag - 1, null);
+            GameManager.Instance.UpdateWeaponUI(oldIndexEnterBag - 1, null);
             StartCoroutine(Move(this.gameObject, GameManager.Instance.storagePosition.position, false));
             oldBagPosition = GameManager.Instance.storagePosition.position;
             oldIndexEnterBag = -1;
@@ -116,7 +116,7 @@ public class DragAndDrop : MonoBehaviour
         if (indexEnterBag != -1)
         {
             GameObject current = GameManager.Instance.bagAssignments[indexEnterBag - 1];
-            GameManager.Instance.UpdateUI(indexEnterBag - 1, this.gameObject);
+            GameManager.Instance.UpdateWeaponUI(indexEnterBag - 1, this.gameObject);
             // shop -> bag
             if (current == null)
             {

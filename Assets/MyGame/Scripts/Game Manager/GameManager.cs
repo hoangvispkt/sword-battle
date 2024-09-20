@@ -1,6 +1,7 @@
 ﻿using DamageNumbersPro;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -21,6 +22,12 @@ public class GameManager : MonoBehaviour
     public GameObject left;
     private WeaponController[] weaponControllers;
     public Transform items;
+    public GameObject rollButton;
+    public TextMeshProUGUI goldUI;
+    public TextMeshProUGUI lifeUI;
+    public TextMeshProUGUI winUI;
+    public TextMeshProUGUI loseUI;
+    public TextMeshProUGUI roundUI;
 
     public Character leftChar;
     public Character rightChar;
@@ -86,13 +93,50 @@ public class GameManager : MonoBehaviour
         Instance.shop.SetActive(false);
         Instance.rightCharacter.SetActive(true);
         Instance.rightCharacterUI.SetActive(true);
+        Instance.rollButton.SetActive(false);
         HideShadow();
-        //ShowWeaponAvatar();
+        Instance.leftChar.round++;
     }
 
-    public void CloseDialog(GameObject dialog)
+    public void CloseDialogWin()
     {
-        dialog.SetActive(false);
+        dialogWin.SetActive(false);
+        Instance.isStartGame = false;
+        Instance.shop.SetActive(true);
+        Instance.rightCharacter.SetActive(false);
+        Instance.rightCharacterUI.SetActive(false);
+        Instance.rollButton.SetActive(true);
+        UpdateShadow();
+        Instance.leftChar.gold += 20;
+        Instance.leftChar.win++;
+        Instance.leftChar.hp += 20;
+        UpdateUI();
+    }
+
+    public void CloseDialogLose()
+    {
+        dialogLose.SetActive(false);
+        Instance.isStartGame = false;
+        Instance.shop.SetActive(true);
+        Instance.rightCharacter.SetActive(false);
+        Instance.rightCharacterUI.SetActive(false);
+        Instance.rollButton.SetActive(true);
+        UpdateShadow();
+        Instance.leftChar.gold += 20;
+        Instance.leftChar.lose++;
+        Instance.leftChar.hp += 20;
+        Instance.leftChar.life--;
+        if (Instance.leftChar.life <= 0)
+        {
+            Debug.Log("End Game");
+            ResetGame();
+        }
+        UpdateUI();
+    }
+
+    public void ResetGame()
+    {
+
     }
 
     public void Roll()
@@ -194,7 +238,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void UpdateUI(int slot, GameObject weapon)
+    public void UpdateWeaponUI(int slot, GameObject weapon)
     {
         Instance.bagAssignments[slot] = weapon;
         Instance.weaponControllers[slot].weapon = weapon;
@@ -204,5 +248,14 @@ public class GameManager : MonoBehaviour
             float attackSpeed = ItemManager.Instance.GetValue(attributes, WeaponAttribute.ATTACK_SPEED);
             Instance.weaponControllers[slot].attackSpeed = attackSpeed;
         }
+    }
+
+    public void UpdateUI()
+    {
+        Instance.goldUI.text = leftChar.gold.ToString();
+        Instance.lifeUI.text = leftChar.life.ToString();
+        Instance.winUI.text = leftChar.win.ToString();
+        Instance.loseUI.text = leftChar.lose.ToString();
+        Instance.roundUI.text = leftChar.round.ToString();
     }
 }

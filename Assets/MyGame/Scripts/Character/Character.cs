@@ -16,6 +16,11 @@ public class Character : MonoBehaviour
     public int intel;
     public int dex;
     public int luck;
+    public int gold;
+    public int life;
+    public int win;
+    public int lose;
+    public int round;
 
     public GameObject hpBar;
     public TextMeshProUGUI hpText;
