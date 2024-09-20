@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
+using DamageNumbersPro;
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -112,9 +115,21 @@ public class DragAndDrop : MonoBehaviour
             return;
         }
 
-        // shop -> bag
+        // shop -> bag (buy)
         if (indexEnterBag != -1)
         {
+            List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(this.gameObject);
+            int price = (int)ItemManager.Instance.GetValue(attributes, WeaponAttribute.PRICE);
+            if (GameManager.Instance.leftChar.gold < price)
+            {
+                GameManager.Instance.numberPrefabMesh.Spawn(this.gameObject.transform.position, "Out of gold!");
+                status = Status.FREE;
+                StartCoroutine(Move(this.gameObject, shopPosition, false));
+                return;
+            }
+            GameManager.Instance.leftChar.gold -= price;
+            GameManager.Instance.UpdateUI();
+
             GameObject current = GameManager.Instance.bagAssignments[indexEnterBag - 1];
             GameManager.Instance.UpdateWeaponUI(indexEnterBag - 1, this.gameObject);
             // shop -> bag

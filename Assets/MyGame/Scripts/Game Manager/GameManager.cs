@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public DamageNumber numberPrefab;
+    public DamageNumber numberPrefabMesh;
+    public DamageNumber numberPrefabGUI;
     public bool isStartGame = false;
     public GameObject dialogWin;
     public GameObject dialogLose;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     public Character rightChar;
 
     public static GameManager Instance { get; private set; }
+    private bool isFirstRoll = true;
 
     private void Awake()
     {
@@ -58,7 +60,7 @@ public class GameManager : MonoBehaviour
     {
         List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(weapon);
         float damage = ItemManager.Instance.GetValue(attributes, WeaponAttribute.DAMAGE);
-        DamageNumber damageNumber = numberPrefab.Spawn(transform.position, damage);
+        DamageNumber damageNumber = numberPrefabMesh.Spawn(transform.position, damage);
 
         this.UpdateCharacterStats(isLeftChar, damage);
     }
@@ -144,15 +146,29 @@ public class GameManager : MonoBehaviour
 
     public void Roll()
     {
-        for (int i = 0; i < shopItemPositions.Count; i++)
+        if (Instance.leftChar.gold >= 1)
         {
-            ClearChildObjects(shopItemPositions[i]);
-            int index = UnityEngine.Random.Range(0, itemsPrefab.Count);
-            GameObject newItem = Instantiate(itemsPrefab[index], shopItemPositions[i].transform);
-            List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(newItem);
-            int price = (int)ItemManager.Instance.GetValue(attributes, WeaponAttribute.PRICE);
-            Instance.shopItemPrices[i].text = price.ToString();
+            for (int i = 0; i < shopItemPositions.Count; i++)
+            {
+                ClearChildObjects(shopItemPositions[i]);
+                int index = UnityEngine.Random.Range(0, itemsPrefab.Count);
+                GameObject newItem = Instantiate(itemsPrefab[index], shopItemPositions[i].transform);
+                List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(newItem);
+                int price = (int)ItemManager.Instance.GetValue(attributes, WeaponAttribute.PRICE);
+                Instance.shopItemPrices[i].text = price.ToString();
+            }
+            if (!isFirstRoll)
+            {
+                Instance.leftChar.gold--;
+            }
+            isFirstRoll = false;
+            UpdateUI();
         }
+        else
+        {
+            numberPrefabGUI.SpawnGUI(Instance.rollButton.GetComponent<RectTransform>(), Vector2.zero, "Out of gold!");
+        }
+
     }
 
     public void ClearChildObjects(GameObject parentObject)
