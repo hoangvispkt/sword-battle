@@ -38,6 +38,7 @@ public class DragAndDrop : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Kinematic;
         status = Status.DRAGGING;
+        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     private async void OnMouseUp()
@@ -178,7 +179,7 @@ public class DragAndDrop : MonoBehaviour
 
     private IEnumerator Move(GameObject weapon, Vector3 to, bool isBuy)
     {
-        while (Vector3.Distance(weapon.transform.position, to) > 0.01f)
+        while (Vector3.Distance(weapon.transform.position, to) > 0.5f)
         {
             weapon.transform.position = Vector3.Lerp(weapon.transform.position, to, moveSpeed * Time.deltaTime);
             yield return null;
