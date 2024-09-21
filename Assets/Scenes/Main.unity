@@ -666,7 +666,7 @@ SpriteRenderer:
   m_Size: {x: 4.56, y: 2.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &111215918
@@ -861,8 +861,6 @@ GameObject:
   m_Component:
   - component: {fileID: 115595381}
   - component: {fileID: 115595384}
-  - component: {fileID: 115595383}
-  - component: {fileID: 115595382}
   m_Layer: 0
   m_Name: Right Weapon 5
   m_TagString: Untagged
@@ -888,34 +886,6 @@ Transform:
   - {fileID: 96500647}
   m_Father: {fileID: 1461540858}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &115595382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115595380}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2339b2425f921f04c98533e19c595bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 0}
---- !u!114 &115595383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115595380}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6c13f24bed06148960f418ae8c0245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  height: 5
 --- !u!212 &115595384
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2396,8 +2366,6 @@ GameObject:
   m_Component:
   - component: {fileID: 243963470}
   - component: {fileID: 243963473}
-  - component: {fileID: 243963472}
-  - component: {fileID: 243963471}
   m_Layer: 0
   m_Name: Right Weapon 2
   m_TagString: Untagged
@@ -2423,34 +2391,6 @@ Transform:
   - {fileID: 1824953722}
   m_Father: {fileID: 1461540858}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &243963471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243963469}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2339b2425f921f04c98533e19c595bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 0}
---- !u!114 &243963472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243963469}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6c13f24bed06148960f418ae8c0245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  height: 5
 --- !u!212 &243963473
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2862,7 +2802,7 @@ SpriteRenderer:
   m_Size: {x: 4.56, y: 2.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &298952770
@@ -3546,8 +3486,6 @@ GameObject:
   m_Component:
   - component: {fileID: 372432785}
   - component: {fileID: 372432788}
-  - component: {fileID: 372432787}
-  - component: {fileID: 372432786}
   m_Layer: 0
   m_Name: Right Weapon 1
   m_TagString: Untagged
@@ -3573,34 +3511,6 @@ Transform:
   - {fileID: 1792921101}
   m_Father: {fileID: 1461540858}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &372432786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372432784}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2339b2425f921f04c98533e19c595bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 0}
---- !u!114 &372432787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372432784}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6c13f24bed06148960f418ae8c0245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  height: 5
 --- !u!212 &372432788
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3982,7 +3892,7 @@ SpriteRenderer:
   m_Size: {x: 4.56, y: 2.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &397962964
@@ -5042,7 +4952,7 @@ SpriteRenderer:
   m_Size: {x: 4.56, y: 2.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &599359150
@@ -6401,8 +6311,6 @@ GameObject:
   m_Component:
   - component: {fileID: 757051090}
   - component: {fileID: 757051093}
-  - component: {fileID: 757051092}
-  - component: {fileID: 757051091}
   m_Layer: 0
   m_Name: Right Weapon 6
   m_TagString: Untagged
@@ -6428,34 +6336,6 @@ Transform:
   - {fileID: 397089262}
   m_Father: {fileID: 1461540858}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &757051091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757051089}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2339b2425f921f04c98533e19c595bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 0}
---- !u!114 &757051092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757051089}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6c13f24bed06148960f418ae8c0245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  height: 5
 --- !u!212 &757051093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7131,7 +7011,7 @@ SpriteRenderer:
   m_Size: {x: 4.56, y: 2.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &812027876
@@ -11303,8 +11183,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1334381770}
   - component: {fileID: 1334381773}
-  - component: {fileID: 1334381772}
-  - component: {fileID: 1334381771}
   m_Layer: 0
   m_Name: Right Weapon 7
   m_TagString: Untagged
@@ -11330,34 +11208,6 @@ Transform:
   - {fileID: 799256549}
   m_Father: {fileID: 1461540858}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1334381771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334381769}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2339b2425f921f04c98533e19c595bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 0}
---- !u!114 &1334381772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334381769}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6c13f24bed06148960f418ae8c0245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  height: 5
 --- !u!212 &1334381773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12819,8 +12669,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1507553995}
   - component: {fileID: 1507553998}
-  - component: {fileID: 1507553997}
-  - component: {fileID: 1507553996}
   m_Layer: 0
   m_Name: Right Weapon 4
   m_TagString: Untagged
@@ -12846,34 +12694,6 @@ Transform:
   - {fileID: 293852628}
   m_Father: {fileID: 1461540858}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1507553996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507553994}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2339b2425f921f04c98533e19c595bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 0}
---- !u!114 &1507553997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507553994}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6c13f24bed06148960f418ae8c0245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  height: 5
 --- !u!212 &1507553998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13582,8 +13402,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1580454525}
   - component: {fileID: 1580454528}
-  - component: {fileID: 1580454527}
-  - component: {fileID: 1580454526}
   m_Layer: 0
   m_Name: Right Weapon 3
   m_TagString: Untagged
@@ -13609,34 +13427,6 @@ Transform:
   - {fileID: 594384009}
   m_Father: {fileID: 1461540858}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1580454526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580454524}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2339b2425f921f04c98533e19c595bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 0}
---- !u!114 &1580454527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580454524}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6c13f24bed06148960f418ae8c0245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  height: 5
 --- !u!212 &1580454528
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15638,7 +15428,7 @@ SpriteRenderer:
   m_Size: {x: 4.56, y: 2.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1806051641
@@ -15805,7 +15595,7 @@ SpriteRenderer:
   m_Size: {x: 4.56, y: 2.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1842598880
