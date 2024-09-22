@@ -2,8 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System;
 using System.Collections.Generic;
-using UnityEditorInternal.Profiling.Memory.Experimental;
-using DamageNumbersPro;
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -34,14 +32,31 @@ public class DragAndDrop : MonoBehaviour
         shopPosition = transform.position;
     }
 
+    private void OnMouseOver()
+    {
+        if (status == Status.FREE)
+            WeaponHoverPopup.Instance.OnMouseEnterWeapon(this.gameObject.name, Input.mousePosition.ToString());
+    }
+
+    private void OnMouseEnter()
+    {
+        if (status == Status.FREE)
+        WeaponHoverPopup.Instance.OnMouseEnterWeapon(this.gameObject.name, Input.mousePosition.ToString());
+    }
+
+    private void OnMouseExit()
+    {
+        WeaponHoverPopup.Instance.OnMouseExitWeapon();
+    }
+
     private void OnMouseDown()
     {
-        rb.bodyType = RigidbodyType2D.Kinematic;
         status = Status.DRAGGING;
+        rb.bodyType = RigidbodyType2D.Kinematic;
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-    private async void OnMouseUp()
+    private void OnMouseUp()
     {
         // check if swap
         if (indexEnterBag != -1 && isBuy && oldIndexEnterBag != -1)

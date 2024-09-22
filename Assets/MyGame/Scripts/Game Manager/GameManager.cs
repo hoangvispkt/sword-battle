@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public Camera worldCamera;
     public Transform storagePosition;  // Vị trí mà weapon sẽ rơi vào khi bị thay thế
     public GameObject[] bagAssignments = new GameObject[7];  // Mảng lưu trữ 7 bag
-    public GameObject[] bags = new GameObject[7];
+    public GameObject[] shadows = new GameObject[7];
     public GameObject left;
     private WeaponController[] weaponControllers;
     public Transform items;
@@ -243,20 +243,20 @@ public class GameManager : MonoBehaviour
         {
             if (Instance.bagAssignments[i] == null)
             {
-                Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5f);
+                Instance.shadows[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.5f);
             }
             else
             {
-                Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+                Instance.shadows[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
             }
         }
     }
 
     public void HideShadow()
     {
-        for (int i = 0; i < Instance.bags.Length; i++)
+        for (int i = 0; i < Instance.shadows.Length; i++)
         {
-            Instance.bags[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+            Instance.shadows[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         }
     }
 
