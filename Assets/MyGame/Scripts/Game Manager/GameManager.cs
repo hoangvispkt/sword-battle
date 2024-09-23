@@ -1,5 +1,6 @@
 ﻿using DamageNumbersPro;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
     private bool isFirstRoll = true;
-
+     
     private void Awake()
     {
         weaponControllers = left.GetComponents<WeaponController>();
@@ -48,7 +49,6 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -62,31 +62,36 @@ public class GameManager : MonoBehaviour
         float damage = ItemManager.Instance.GetValue(attributes, WeaponAttribute.DAMAGE);
         DamageNumber damageNumber = numberPrefabMesh.Spawn(transform.position, damage);
 
-        this.UpdateCharacterStats(isLeftChar, damage);
+        float mpRequired = ItemManager.Instance.GetValue(attributes, WeaponAttribute.MP_REQUIRED);
+        this.UpdateCharacterStats(isLeftChar, damage, mpRequired);
     }
 
-    private void UpdateCharacterStats(bool isLeftChar, float damage)
+    private void UpdateCharacterStats(bool isLeftChar, float damage, float mpRequired)
     {
         if (!Instance.isStartGame) return;
         if (isLeftChar)
         {
             rightChar.hp = Math.Max(rightChar.hp - (int)damage, 0);
-            rightChar.UpdateHp();
             if (rightChar.hp <= 0)
             {
                 Instance.isStartGame = false;
                 dialogWin.SetActive(true);
             }
+            leftChar.mp -= (int)mpRequired;
+            rightChar.UpdateHp();
+            leftChar.UpdateMp();
         }
         else
         {
             leftChar.hp = Math.Max(leftChar.hp - (int)damage, 0);
-            leftChar.UpdateHp();
             if (leftChar.hp <= 0)
             {
                 Instance.isStartGame = false;
                 dialogLose.SetActive(true);
             }
+            rightChar.mp -= (int)mpRequired;
+            leftChar.UpdateHp();
+            rightChar.UpdateMp();
         }
     }
 
@@ -99,6 +104,7 @@ public class GameManager : MonoBehaviour
         Instance.rollButton.SetActive(false);
         HideShadow();
         Instance.leftChar.round++;
+        StartCoroutine(ManaRecovery());
     }
 
     public void CloseDialogWin()
@@ -293,5 +299,15 @@ public class GameManager : MonoBehaviour
         Instance.roundUI.text = leftChar.round.ToString();
         leftChar.UpdateHp();
         leftChar.UpdateMp();
+    }
+
+    private IEnumerator ManaRecovery()
+    {
+        while (Instance.isStartGame)
+        {
+            yield return new WaitForSeconds(1f);
+            leftChar.mp = Mathf.Max(leftChar.mp + leftChar.mpRecovery, leftChar.maxMp);
+            leftChar.UpdateMp();
+        }
     }
 }
