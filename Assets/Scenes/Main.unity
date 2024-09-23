@@ -6105,9 +6105,12 @@ MonoBehaviour:
   hp: 100
   maxHp: 100
   mp: 20
+  maxMp: 0
   attackSpeed: 1
+  maxAttackSpeed: 0
   crit: 0
   armor: 5
+  maxArmor: 0
   str: 5
   agi: 5
   intel: 0
@@ -6120,6 +6123,8 @@ MonoBehaviour:
   round: 0
   hpBar: {fileID: 1556566721}
   hpText: {fileID: 895791637}
+  mpBar: {fileID: 0}
+  mpText: {fileID: 0}
 --- !u!1 &731253028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8922,7 +8927,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1093057165}
   - component: {fileID: 1093057164}
-  - component: {fileID: 1093057163}
   - component: {fileID: 1093057166}
   m_Layer: 0
   m_Name: drop point
@@ -8931,18 +8935,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1093057163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093057162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1058d5686944487a939f717613baa4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!68 &1093057164
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -12941,12 +12933,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461540857}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6d8cf2f056b5e14a9e10891039db970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 5552237776566252479, guid: 3cfefaa160d275244b68c752b3854f4c, type: 3}
+  weapon: {fileID: 1908910536438119489, guid: 2293fa01a18fd4643a1a9af0bafba7ca, type: 3}
   spawnPoint: {fileID: 243963470}
   pointUp: {fileID: 1421057529}
   pointDown: {fileID: 78153260}
@@ -12964,7 +12956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d8cf2f056b5e14a9e10891039db970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 5552237776566252479, guid: 3cfefaa160d275244b68c752b3854f4c, type: 3}
+  weapon: {fileID: 3235652923340777033, guid: 8a5d7f90d60789c439b39dea1f121d6e, type: 3}
   spawnPoint: {fileID: 372432785}
   pointUp: {fileID: 812027877}
   pointDown: {fileID: 561699754}
@@ -13759,6 +13751,10 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 7810130316266088557, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}
+      propertyPath: m_Name
+      value: LeftMPText
+      objectReference: {fileID: 0}
     - target: {fileID: 7810130316584933018, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13886,6 +13882,10 @@ PrefabInstance:
     - target: {fileID: 7810130317307454867, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}
       propertyPath: m_FillAmount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810130317307454869, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}
+      propertyPath: m_Name
+      value: LeftMPBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14679,10 +14679,13 @@ MonoBehaviour:
   damage: 5
   hp: 100
   maxHp: 100
-  mp: 20
+  mp: 50
+  maxMp: 50
   attackSpeed: 1
+  maxAttackSpeed: 1
   crit: 0
   armor: 5
+  maxArmor: 5
   str: 5
   agi: 5
   intel: 0
@@ -14695,6 +14698,8 @@ MonoBehaviour:
   round: 0
   hpBar: {fileID: 2051528258}
   hpText: {fileID: 2031343236}
+  mpBar: {fileID: 1797049530}
+  mpText: {fileID: 2050946298}
 --- !u!1 &1660620050
 GameObject:
   m_ObjectHideFlags: 0
@@ -15989,6 +15994,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1797049530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7810130317307454869, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}
+  m_PrefabInstance: {fileID: 1558884244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1806051641
 GameObject:
   m_ObjectHideFlags: 0
@@ -17619,6 +17629,17 @@ Transform:
   - {fileID: 2013344811}
   m_Father: {fileID: 976090570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050946298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7810130316266088555, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}
+  m_PrefabInstance: {fileID: 1558884244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2051528258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7810130317307454869, guid: 3efb5928cc43adb4f8d87dad992c38a2, type: 3}

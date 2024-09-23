@@ -112,7 +112,11 @@ public class GameManager : MonoBehaviour
         UpdateShadow();
         Instance.leftChar.gold += 20;
         Instance.leftChar.win++;
-        Instance.leftChar.hp += 20;
+        Instance.leftChar.maxHp += 20;
+        Instance.leftChar.hp = Instance.leftChar.maxHp;
+        Instance.leftChar.mp = Instance.leftChar.maxMp;
+        Instance.leftChar.attackSpeed = Instance.leftChar.maxAttackSpeed;
+        Instance.leftChar.armor = Instance.leftChar.maxArmor;
         UpdateUI();
         Roll();
     }
@@ -128,7 +132,11 @@ public class GameManager : MonoBehaviour
         UpdateShadow();
         Instance.leftChar.gold += 20;
         Instance.leftChar.lose++;
-        Instance.leftChar.hp += 20;
+        Instance.leftChar.maxHp += 20;
+        Instance.leftChar.hp = Instance.leftChar.maxHp;
+        Instance.leftChar.mp = Instance.leftChar.maxMp;
+        Instance.leftChar.attackSpeed = Instance.leftChar.maxAttackSpeed;
+        Instance.leftChar.armor = Instance.leftChar.maxArmor;
         Instance.leftChar.life--;
         if (Instance.leftChar.life <= 0)
         {
@@ -201,19 +209,23 @@ public class GameManager : MonoBehaviour
                     break;
                 case WeaponAttribute.HP:
                     leftChar.hp += value;
+                    leftChar.maxHp += value;
                     //UpdateHp(); // Uncomment to update health bar when HP changes
                     break;
                 case WeaponAttribute.MP:
                     leftChar.mp += value;
+                    leftChar.maxHp += value;
                     break;
                 case WeaponAttribute.ATTACK_SPEED:
                     leftChar.attackSpeed += value;
+                    leftChar.maxAttackSpeed += value;
                     break;
                 case WeaponAttribute.CRIT:
                     leftChar.crit += value;
                     break;
                 case WeaponAttribute.ARMOR:
                     leftChar.armor += value;
+                    leftChar.maxArmor += value;
                     break;
                 case WeaponAttribute.STR:
                     leftChar.str += value;
@@ -279,5 +291,7 @@ public class GameManager : MonoBehaviour
         Instance.winUI.text = leftChar.win.ToString();
         Instance.loseUI.text = leftChar.lose.ToString();
         Instance.roundUI.text = leftChar.round.ToString();
+        leftChar.UpdateHp();
+        leftChar.UpdateMp();
     }
 }

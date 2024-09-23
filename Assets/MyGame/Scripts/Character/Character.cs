@@ -8,9 +8,12 @@ public class Character : MonoBehaviour
     public int hp;
     public int maxHp;
     public int mp;
+    public int maxMp;
     public int attackSpeed;
+    public int maxAttackSpeed;
     public int crit;
     public int armor;
+    public int maxArmor;
     public int str;
     public int agi;
     public int intel;
@@ -25,10 +28,20 @@ public class Character : MonoBehaviour
     public GameObject hpBar;
     public TextMeshProUGUI hpText;
 
+    public GameObject mpBar;
+    public TextMeshProUGUI mpText;
+
     public void UpdateHp()
     {
         float fillAmount = (float)hp / maxHp;
         hpBar.GetComponent<Image>().fillAmount = fillAmount;
-        hpText.text = hp.ToString();
+        hpText.text = hp + "/" + maxHp;
+    }
+
+    public void UpdateMp()
+    {
+        float fillAmount = (float)mp / maxMp;
+        mpBar.GetComponent<Image>().fillAmount = fillAmount;
+        mpText.text = mp + "/" + maxMp;
     }
 }
