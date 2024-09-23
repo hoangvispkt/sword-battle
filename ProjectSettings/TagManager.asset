@@ -12,6 +12,7 @@ TagManager:
   - bag5
   - bag6
   - bag7
+  - sellArea
   layers:
   - Default
   - TransparentFX

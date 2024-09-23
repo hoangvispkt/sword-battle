@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using DamageNumbersPro;
+using Unity.Jobs;
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -13,6 +16,7 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 oldBagPosition;
     private bool isBuy = false;
     private int oldIndexEnterBag = -1;
+    private bool isLeftPosition = true;
 
     public Status status;
     public enum Status
@@ -81,6 +85,22 @@ public class DragAndDrop : MonoBehaviour
             }
 
         }
+
+        // sell: bag -> shop
+        if (indexEnterBag == - 1 && isBuy && isLeftPosition == false)
+        {
+            List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(this.gameObject);
+            int price = (int)ItemManager.Instance.GetValue(attributes, WeaponAttribute.PRICE);
+            GameManager.Instance.leftChar.gold += price;
+            GameManager.Instance.UpdateUI();
+            Destroy(this.gameObject);
+            GameManager.Instance.damageNumberPermanent.gameObject.SetActive(false);
+            if (oldIndexEnterBag != -1)
+            {
+                GameManager.Instance.bagAssignments[oldIndexEnterBag - 1] = null;
+            }
+            GameManager.Instance.UpdateShadow();
+        } 
 
         // shop -> shop
         if (indexEnterBag == -1 && !isBuy)
@@ -189,6 +209,7 @@ public class DragAndDrop : MonoBehaviour
         {
             Vector3 mousePos = GetMouseWorldPos();
             rb.MovePosition(Vector3.Lerp(transform.position, mousePos, moveSpeed * Time.deltaTime));
+            ShowSellArea();
         }
     }
 
@@ -250,6 +271,47 @@ public class DragAndDrop : MonoBehaviour
             { 
                 shadow.color = new Color(0, 0, 0, 0.5f);
             }
+        }
+    }
+
+    private void ShowSellArea()
+    {
+        // Lấy chiều rộng của màn hình
+        float screenWidth = Screen.width;
+
+        // Lấy vị trí hiện tại của chuột
+        Vector3 mousePosition = Input.mousePosition;
+
+        // Kiểm tra nếu chuột ở nửa phải màn hình
+        if (mousePosition.x > screenWidth / 2)
+        {
+            if (status == Status.DRAGGING && isBuy)
+            {
+                List<AttributeOption> attributes = ItemManager.Instance.GetAttributes(this.gameObject);
+                float price = ItemManager.Instance.GetValue(attributes, WeaponAttribute.PRICE);
+                if (GameManager.Instance.damageNumberPermanent == null)
+                {
+                    GameManager.Instance.damageNumberPermanent = GameManager.Instance.numberPrefabMeshPermanent.Spawn(this.gameObject.transform.position, "Sell for " + price + " gold!");
+                }
+                else
+                {
+                    GameManager.Instance.damageNumberPermanent.leftText = "Sell for " + price + " gold!";
+                    GameManager.Instance.damageNumberPermanent.SetPosition(this.gameObject.transform.position);
+                }
+                GameManager.Instance.damageNumberPermanent.gameObject.SetActive(true);
+            }
+            isLeftPosition = false;
+        }
+        else
+        {
+            if (status == Status.DRAGGING && isBuy)
+            {
+                if (GameManager.Instance.damageNumberPermanent != null)
+                {
+                    GameManager.Instance.damageNumberPermanent.gameObject.SetActive(false);
+                }
+            }
+            isLeftPosition = true;
         }
     }
 }

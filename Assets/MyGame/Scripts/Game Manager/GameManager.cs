@@ -8,6 +8,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public DamageNumber numberPrefabMesh;
+    public DamageNumber numberPrefabMeshPermanent;
     public DamageNumber numberPrefabGUI;
     public bool isStartGame = false;
     public GameObject dialogWin;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI winUI;
     public TextMeshProUGUI loseUI;
     public TextMeshProUGUI roundUI;
+    public DamageNumber damageNumberPermanent;
 
     public Character leftChar;
     public Character rightChar;
@@ -104,7 +106,7 @@ public class GameManager : MonoBehaviour
         Instance.rollButton.SetActive(false);
         HideShadow();
         Instance.leftChar.round++;
-        StartCoroutine(ManaRecovery());
+        Instance.StartCoroutine(Instance.ManaRecovery());
     }
 
     public void CloseDialogWin()
@@ -306,7 +308,7 @@ public class GameManager : MonoBehaviour
         while (Instance.isStartGame)
         {
             yield return new WaitForSeconds(1f);
-            leftChar.mp = Mathf.Max(leftChar.mp + leftChar.mpRecovery, leftChar.maxMp);
+            leftChar.mp = Mathf.Min(leftChar.mp + leftChar.mpRecovery, leftChar.maxMp);
             leftChar.UpdateMp();
         }
     }
